@@ -13,7 +13,6 @@ layout: default
     </h1>
     <p class="desc">{{ page.subtitle }}</p>
   </header>
-
   <article>
     {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
@@ -36,14 +35,6 @@ layout: default
           <div class="more-info">{{ page.profile.more_info }}</div>
         {% endif %}
       </div>
-      <!-- Social -->
-      {% if page.social %}
-        <div class="social">
-          <div class="contact-icons">{% include social.liquid %}</div>
-
-          <div class="contact-note">{{ site.contact_note }}</div>
-        </div>
-      {% endif %}
     {% endif %}
 
     <div class="clearfix">{{ content }}</div>
@@ -71,7 +62,15 @@ layout: default
       </h2>
       {% include selected_papers.liquid %}
     {% endif %}
+    
+    <!-- Social -->
+      {% if page.social %}
+        <div class="social">
+          <div class="contact-icons">{% include social.liquid %}</div>
 
+          <div class="contact-note">{{ site.contact_note }}</div>
+        </div>
+      {% endif %}
 
   </article>
 </div>
