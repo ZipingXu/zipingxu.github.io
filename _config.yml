@@ -293,8 +293,8 @@ display_categories: ["blockquotes"] # these categories will be displayed on the 
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Ziping]
-  first_name: [Xu]
+  last_name: [Xu]
+  first_name: [Ziping]
 
   style: apa
   locale: en
