@@ -22,4 +22,4 @@ I obtained my PhD degree in Statistics from University of Michigan advised by Pr
 
 **Research Interests.** My primary research interests lie in the theory and practice in developing sequential decision-making approach for **digital and mobile health**. My works include designing *sample-efficient online learning* methods, *statistical inference* methods for adaptively collected data, and *transfer/multitask learning* approaches to address the continual nature of health applications.
 
-**I am on the 2024-2025 academic job market and would be happy to discuss any opportunities!**
+**I am on the 2024-2025 academic job market and would be happy to discuss any opportunities! Find my lastest [CV](../assets/CV/CV.pdf) here.**
