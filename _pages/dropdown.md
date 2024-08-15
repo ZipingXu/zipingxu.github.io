@@ -7,6 +7,6 @@ dropdown: true
 children:
   - title: publications
     permalink: /publications/
-  - title: CV
-    permalink: /CV/
+  - title: cv
+    permalink: /cv/
 ---
