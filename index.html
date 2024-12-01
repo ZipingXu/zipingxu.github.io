@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziping Xu - Academic Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Add Navigation Menu -->
+    <nav class="nav-menu">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#news">Invited Talks</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Add id="home" to header -->
+        <header id="home">
+            <div class="profile-header">
+                <div class="profile-left">
+                    <img src="assets/Headshot.jpg" alt="Ziping Xu" class="profile-img">
+                    <div class="social-icons">
+                        <em style="color: #666666;">zipingxu@fas.harvard.edu</em>
+                        <a href="https://x.com/ZipingXu0221" target="_blank" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=V-VcaYIAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        <a href="mailto:zipingxu@fas.harvard.edu" target="_blank" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="profile-content">
+                    <div class="profile-info">
+                        <h1 style="color: #8B0000;">Ziping Xu</h1>
+                        <p class="title">Postdoctoral Fellow / Department of Statistics / Harvard University</p>
+                    </div>
+                    <div class="about-me">
+                        <!-- <h2>About Me</h2> -->
+                         <br>
+                        <p>I am a Postdoctoral Fellow in Statistics at Harvard University with Professor <a href="http://people.seas.harvard.edu/~samurphy/">Susan Murphy</a>.</p>
+                        
+                        <p>I obtained my PhD degree in Statistics from University of Michigan advised by Professor <a href="https://www.ambujtewari.com">Ambuj Tewari</a>. Before joining University of Michigan, I obtained my B.S. degree in Data Science from Peking University in 2018, where I was advised by Professor <a href="https://www.songxichen.com">Song Xi Chen</a>.</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-me">
+                <strong>I am on the 2024-2025 academic job market and would be happy to discuss any opportunities! Find my lastest CV <a href="assets/CV_v4.pdf">here</a>.</strong>
+            </div>
+        </header>
+
+        <!-- Research Interests -->
+        <section id="research">
+            <h2>Research Interests</h2>
+            <p> My primary research interests lie in <strong>machine learning theory and applications</strong>, with a focus on <strong>sequential decision-making approaches for digital interventions</strong> in domains such as <strong>mobile health</strong>. My theoretical works tackle the critical challenges in applying sequential decision-making approaches, for example, Reinforcement Learning (RL), in mobile health. Below I summarize three key challenges and my works on them:
+                <!-- My works include designing sample-efficient online learning methods, statistical inference methods for adaptively collected data, and transfer/multitask learning approaches to address the continual nature of health applications. -->
+            </p>
+                <br>
+            <ul>
+                <li><strong>Sample-Efficient Online Algorithm Design:</strong> In mobile health, the availability of data is often limited, making sample efficiency crucial. I develop algorithms that leverage structural information about the domain to learn effective policies with small sample size [<a href="https://arxiv.org/pdf/2205.14829">12</a>,<a href="http://proceedings.mlr.press/v130/xu21a/xu21a.pdf">15</a>,<a href="https://proceedings.neurips.cc/paper/2020/file/d3b1fb02964aa64e257f9f26a31f72cf-Paper.pdf">19</a>].
+                </li>
+                <br>
+                <li><strong>Statistical Inference for Adaptively Collected Data:</strong> Adaptive experimental designs, commonly used in mobile health, introduce dependencies across time and users, violating the assumptions of most existing statistical inference methods. I develop statistical inference approaches that remain valid in these challenging settings [<a href="https://proceedings.mlr.press/v238/guo24b/guo24b.pdf">1</a>,<a href="https://openreview.net/pdf?id=nn8u4ef0LH">7</a>].</li>
+                <br>
+                <li><strong>Transfer Learning/Multitask Learning:</strong> Due to limited sample sizes in mobile health, transferring knowledge from existing datasets is often necessary. However, significant domain shifts, driven by differences in participant demographics, intervention designs, or societal changes, complicate this process. I design transfer learning approaches that account for such shifts, enabling more robust and effective learning [<a href="https://arxiv.org/pdf/2403.01636">4</a>,<a href="https://arxiv.org/pdf/2403.10946">5</a>,<a href="https://rlj.cs.umass.edu/2024/papers/Paper152.html">6</a>,<a href="https://proceedings.mlr.press/v162/xu22i/xu22i.pdf">11</a>,<a href="https://proceedings.neurips.cc/paper_files/paper/2021/file/258be18e31c8188555c2ff05b4d542c3-Paper.pdf">17</a>].</li>
+            </ul>
+            <br>
+            <strong>Mobile health clinical trial design:</strong> I am actively involved in designing mobile health clinical trials with domain scientists. One such trial is <strong>ADAPTS-HCT</strong>, which targets <strong>medication adherence</strong> among adolescents and young adults (AYA) undergone bone marrow transplantation. I lead the RL algorithm design for adaptive delivery of digital interventions as part of the intervention package. See my <a href="assets/Informs_talk.pdf">talk</a> at INFORMS 2024 for more details.
+        </section>
+
+        <!-- Publications -->
+        <section id="publications">
+            <h2>Publications (<a href="https://scholar.google.com/citations?user=V-VcaYIAAAAJ&hl=en&oi=ao">Google Scholar</a>)</h2>
+            <div class="publications-container" id="publications-content">
+                <!-- The publications will be loaded here -->
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news">
+            <h2>Recent Invited Talks</h2>
+            <div class="news-item">
+                <span class="date">Reinforcement Learning for Mobile Health: Addressing Measurement Error and Non-stationarity</span>
+                <ul>
+                    <li>AI and Healthcare Seminar Series at MILA, November 2024</li>
+                    <li>STATS 300 Seminar at Department of Statistics, Harvard University, Boston, MA, November 2024</li>
+                </ul>
+                <br>
+                <span class="date">Designing a Multi-agent RL Algorithm for Improving Post-HCT Medication Adherence via a Digital Intervention</span>
+                <ul>
+                    <li>2024 INFORMS Annual Meeting, Seattle, WA, October 2024</li>
+                </ul>
+                <br>
+                <span class="date">The Fallacy of Minimizing Cumulative Regret in the Sequential Task Setting</span>
+                <ul>
+                    <li>2024 Joint Statistical Meetings, Portland, OR, August 2024</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- Add this script before the closing body tag -->
+    <script>
+        // Function to load the publications
+        async function loadPublications() {
+            try {
+                const response = await fetch('assets/papers_with_years.html');
+                const content = await response.text();
+                document.getElementById('publications-content').innerHTML = content;
+            } catch (error) {
+                console.error('Error loading publications:', error);
+                document.getElementById('publications-content').innerHTML = 
+                    '<p>Error loading publications. Please try again later.</p>';
+            }
+        }
+
+        // Load publications when the page loads
+        loadPublications();
+    </script>
+</body>
+</html> 
