@@ -244,6 +244,9 @@ a:hover {
 
 /* Add media query for smaller screens */
 @media (max-width: 768px) {
+    .nav-menu {
+        display: none;  /* Hide navigation menu on mobile screens */
+    }
     .profile-header {
         flex-direction: column;
         gap: 1rem;
