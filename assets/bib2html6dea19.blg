@@ -1,0 +1,67 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: bib2html6dea19.aux
+The style file: plain.bst
+Database file #1: papers.bib
+Name 1 in "Ziping Xu, Hinal Jajal, Sung Won Choi, Inbal Nahum-Shani, Guy Shani, Alexandra Psihogios, Pei-Yao Hung, and Susan Murphy" has a comma at the end for entry xu2025aime
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Ziping Xu, Hinal Jajal, Sung Won Choi, Inbal Nahum-Shani, Guy Shani, Alexandra Psihogios, Pei-Yao Hung, and Susan Murphy" for entry xu2025aime
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Ziping Xu, Hinal Jajal, Sung Won Choi, Inbal Nahum-Shani, Guy Shani, Alexandra Psihogios, Pei-Yao Hung, and Susan Murphy" for entry xu2025aime
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Ziping Xu, Hinal Jajal, Sung Won Choi, Inbal Nahum-Shani, Guy Shani, Alexandra Psihogios, Pei-Yao Hung, and Susan Murphy" for entry xu2025aime
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Ziping Xu, Hinal Jajal, Sung Won Choi, Inbal Nahum-Shani, Guy Shani, Alexandra Psihogios, Pei-Yao Hung, and Susan Murphy" for entry xu2025aime
+while executing---line 1049 of file plain.bst
+Name 1 in "Ziping Xu, Hinal Jajal, Sung Won Choi, Inbal Nahum-Shani, Guy Shani, Alexandra Psihogios, Pei-Yao Hung, and Susan Murphy" has a comma at the end for entry xu2025aime
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Ziping Xu, Hinal Jajal, Sung Won Choi, Inbal Nahum-Shani, Guy Shani, Alexandra Psihogios, Pei-Yao Hung, and Susan Murphy" for entry xu2025aime
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Ziping Xu, Hinal Jajal, Sung Won Choi, Inbal Nahum-Shani, Guy Shani, Alexandra Psihogios, Pei-Yao Hung, and Susan Murphy" for entry xu2025aime
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Ziping Xu, Hinal Jajal, Sung Won Choi, Inbal Nahum-Shani, Guy Shani, Alexandra Psihogios, Pei-Yao Hung, and Susan Murphy" for entry xu2025aime
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Ziping Xu, Hinal Jajal, Sung Won Choi, Inbal Nahum-Shani, Guy Shani, Alexandra Psihogios, Pei-Yao Hung, and Susan Murphy" for entry xu2025aime
+while executing---line 1090 of file plain.bst
+You've used 24 entries,
+            2118 wiz_defined-function locations,
+            622 strings with 8743 characters,
+and the built_in function-call counts, 8897 in all, are:
+= -- 813
+> -- 582
+< -- 3
++ -- 231
+- -- 204
+* -- 644
+:= -- 1535
+add.period$ -- 74
+call.type$ -- 24
+change.case$ -- 174
+chr.to.int$ -- 0
+cite$ -- 24
+duplicate$ -- 310
+empty$ -- 603
+format.name$ -- 204
+if$ -- 1805
+int.to.chr$ -- 0
+int.to.str$ -- 24
+missing$ -- 24
+newline$ -- 123
+num.names$ -- 48
+pop$ -- 191
+preamble$ -- 1
+purify$ -- 150
+quote$ -- 0
+skip$ -- 218
+stack$ -- 0
+substring$ -- 382
+swap$ -- 65
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 96
+warning$ -- 0
+while$ -- 63
+width$ -- 26
+write$ -- 253
+(There were 10 error messages)

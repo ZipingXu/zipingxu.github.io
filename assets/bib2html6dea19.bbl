@@ -1,0 +1,148 @@
+\begin{thebibliography}{10}
+
+\bibitem{Fan_2024_WACV}
+Quanfu Fan, Yilai Li, Yuguang Yao, John Cohn, Sijia Liu, Ziping Xu, Seychelle
+  Vos, and Michael Cianfrocco.
+\newblock Cryorl: Reinforcement learning enables efficient cryo-em data
+  collection.
+\newblock In {\em Proceedings of the IEEE/CVF Winter Conference on Applications
+  of Computer Vision (WACV)}, pages 7892--7902, 2024.
+
+\bibitem{gogineni2020torsionnet}
+Tarun Gogineni, Ziping Xu, Exequiel Punzalan, Runxuan Jiang, Joshua Kammeraad,
+  Ambuj Tewari, and Paul Zimmerman.
+\newblock Torsionnet: A reinforcement learning approach to sequential conformer
+  search.
+\newblock {\em In NeurIPS}, 2020.
+
+\bibitem{guo2023online}
+Yongyi Guo, Ziping Xu, and Susan Murphy.
+\newblock Online learning in bandits with predicted context.
+\newblock {\em In Proceedings of the 27th International Conference on
+  Artificial Intelligence and Statistics (AISTATS)}, 2024.
+
+\bibitem{Li_2022}
+Yilai Li, Quanfu Fan, Ziping Xu, Emma~Rose Lee, John Cohn, Veronique Demers,
+  Ja~Young Lee, Lucy Yip, Michael~A. Cianfrocco, and Seychelle~M. Vos.
+\newblock Optimized path planning surpasses human efficiency in cryo-em
+  imaging.
+\newblock {\em eLife}, 2022.
+
+\bibitem{liu2018health}
+Wenling Liu, Ziping Xu, and Tianan Yang.
+\newblock Health effects of air pollution in china.
+\newblock {\em International journal of environmental research and public
+  health}, 15(7):1471, 2018.
+
+\bibitem{modi2022big}
+Aditya Modi, Ziping Xu, Mohamad~KS Faradonbeh, and Ambuj Tewari.
+\newblock Big control actions help multitask learning of unstable linear
+  systems.
+\newblock {\em In ICML 2022 Complex feedback in online learning Workshop},
+  2022.
+
+\bibitem{shim2022predicting}
+Eunjae Shim, Joshua~A Kammeraad, Ziping Xu, Ambuj Tewari, Tim Cernak, and
+  Paul~M Zimmerman.
+\newblock Predicting reaction conditions from limited data through active
+  transfer learning.
+\newblock {\em Chemical Science}, 2022.
+
+\bibitem{sun2022mopa}
+Hao Sun, Ziping Xu, Zhenghao Peng, Meng Fang, Bo~Dai, and Bolei Zhou.
+\newblock Mopa: a minimalist off-policy approach to safe-rl.
+\newblock In {\em Deep Reinforcement Learning Workshop NeurIPS 2022}, 2022.
+
+\bibitem{sun2022supervised}
+Hao Sun, Ziping Xu, Taiyi Wang, Meng Fang, and Bolei Zhou.
+\newblock Supervised q-learning for continuous control.
+\newblock In {\em Deep Reinforcement Learning Workshop NeurIPS 2022}, 2022.
+
+\bibitem{tan2024natural}
+Kevin Tan and Ziping Xu.
+\newblock A natural extension to online algorithms for hybrid rl with limited
+  coverage.
+\newblock {\em Reinforcement Learning Journal}, 1, 2024.
+
+\bibitem{xu2020meteorological}
+Ziping Xu, Song~Xi Chen, and Xiaoqing Wu.
+\newblock Meteorological change and impacts on air pollution: Results from
+  north china.
+\newblock {\em Journal of Geophysical Research: Atmospheres},
+  125(16):e2020JD032423, 2020.
+
+\bibitem{xu2023coupling}
+Ziping Xu, Quanfu Fan, Yilai Li, Emma~Rose Lee, John~Maxwell Cohn, Ambuj
+  Tewari, Seychelle~M Vos, and Michael Cianfrocco.
+\newblock Coupling semi-supervised learning with reinforcement learning for
+  better decision making---an application to cryo-em data collection.
+\newblock In {\em NeurIPS 2023 AI for Science Workshop}, 2023.
+
+\bibitem{lu2021bandit}
+Ziping Xu, Yangyi Lu, and Ambuj Tewari.
+\newblock *bandit algorithms for precision medicine.
+\newblock {\em arXiv preprint arXiv:2108.04782}, 2021.
+
+\bibitem{xu2021decision}
+Ziping Xu, Amirhossein Meisami, and Ambuj Tewari.
+\newblock Decision making problems with funnel structure: A multi-task learning
+  approach with application to email marketing campaigns.
+\newblock In {\em AISTATS}, pages 127--135. PMLR, 2021.
+
+\bibitem{xu2022adaptive}
+Ziping Xu, Eunjae Shim, Ambuj Tewari, and Paul Zimmerman.
+\newblock Adaptive sampling for discovery.
+\newblock In {\em NeurIPS}, 2022.
+
+\bibitem{xu2019worst}
+Ziping Xu and Ambuj Tewari.
+\newblock Worst-case regret bound for perturbation based exploration.
+\newblock {\em In NeurIPS}, 2019.
+
+\bibitem{xu2020reinforcement}
+Ziping Xu and Ambuj Tewari.
+\newblock Reinforcement learning in factored mdps: Oracle-efficient algorithms
+  and tighter regret bounds for the non-episodic setting.
+\newblock {\em In NeurIPS}, 33:18226--18236, 2020.
+
+\bibitem{xu2021representation}
+Ziping Xu and Ambuj Tewari.
+\newblock Representation learning beyond linear prediction functions.
+\newblock {\em In NeurIPS}, 34:4792--4804, 2021.
+
+\bibitem{xu2022statistical}
+Ziping Xu and Ambuj Tewari.
+\newblock On the statistical benefits of curriculum learning.
+\newblock In {\em ICML}, pages 24663--24682. PMLR, 2022.
+
+\bibitem{ICLR2024-Xu}
+Ziping Xu, Zifan Xu, Runxuan Jiang, Peter Stone, and Ambuj Tewari.
+\newblock Sample efficient myopic exploration through multitask reinforcement
+  learning with diverse tasks.
+\newblock In {\em Proceedings of the International Conference on Learning
+  Representations (ICLR)}, 2024.
+
+\bibitem{xu2024adaptation}
+Ziping Xu, Iris Yan, and Susan Murphy.
+\newblock An adaptation of rlsvi with explicit action sampling probabilities.
+\newblock {\em RLC 2024 Deployable RL Workshop}, 2024.
+
+\bibitem{xu2024fallacy}
+Ziping Xu, Kelly Zhang, and Susan Murphy.
+\newblock The fallacy of minimizing local regret in the sequential task
+  setting.
+\newblock {\em arXiv}, 2024.
+
+\bibitem{zhang2017cautionary}
+Shuyi Zhang, Bin Guo, Anlan Dong, Jing He, Ziping Xu, and Song~Xi Chen.
+\newblock Cautionary tales on air-quality improvement in beijing.
+\newblock {\em Proceedings of the Royal Society A: Mathematical, Physical and
+  Engineering Sciences}, 473(2205):20170457, 2017.
+
+\bibitem{xu2025aime}
+Sung Won Choi Inbal Nahum-Shani Guy Shani Alexandra Psihogios Pei-Yao~Hung
+  Ziping~Xu, Hinal~Jajal and Susan Murphy.
+\newblock Reinforcement learning on aya dyads to enhance medication adherence.
+\newblock {\em Submitted to AIME (AI in Medicine) 2025}, 2025.
+
+\end{thebibliography}
