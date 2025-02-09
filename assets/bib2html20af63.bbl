@@ -1,0 +1,112 @@
+\begin{thebibliography}{10}
+
+\bibitem{Fan_2024_WACV}
+titleQuanfu Fan, Yilai Li, Yuguang Yao, John Cohn, Sijia Liu, Ziping Xu,
+  Seychelle Vos, and Michael Cianfrocco.
+\newblock {\em \\Proceedings of the IEEE/CVF Winter Conference on Applications
+  of Computer Vision (WACV)}, pages 7892--7902, 2024.
+
+\bibitem{gogineni2020torsionnet}
+titleTarun Gogineni, Ziping Xu, Exequiel Punzalan, Runxuan Jiang, Joshua
+  Kammeraad, Ambuj Tewari, and Paul Zimmerman.
+\newblock {\em \\In NeurIPS}, 2020.
+
+\bibitem{guo2023online}
+titleYongyi Guo, Ziping Xu, and Susan Murphy.
+\newblock {\em \\In Proceedings of the 27th International Conference on
+  Artificial Intelligence and Statistics (AISTATS)}, 2024.
+
+\bibitem{Li_2022}
+titleYilai Li, Quanfu Fan, Ziping Xu, Emma~Rose Lee, John Cohn, Veronique
+  Demers, Ja~Young Lee, Lucy Yip, Michael~A. Cianfrocco, and Seychelle~M. Vos.
+\newblock {\em \\eLife}, 2022.
+
+\bibitem{liu2018health}
+titleWenling Liu, Ziping Xu, and Tianan Yang.
+\newblock {\em \\International journal of environmental research and public
+  health}, 15(7):1471, 2018.
+
+\bibitem{modi2022big}
+titleAditya Modi, Ziping Xu, Mohamad~KS Faradonbeh, and Ambuj Tewari.
+\newblock {\em \\In ICML 2022 Complex feedback in online learning Workshop},
+  2022.
+
+\bibitem{shim2022predicting}
+titleEunjae Shim, Joshua~A Kammeraad, Ziping Xu, Ambuj Tewari, Tim Cernak, and
+  Paul~M Zimmerman.
+\newblock {\em \\Chemical Science}, 2022.
+
+\bibitem{sun2022mopa}
+titleHao Sun, Ziping Xu, Zhenghao Peng, Meng Fang, Bo~Dai, and Bolei Zhou.
+\newblock {\em \\Deep Reinforcement Learning Workshop NeurIPS 2022}, 2022.
+
+\bibitem{sun2022supervised}
+titleHao Sun, Ziping Xu, Taiyi Wang, Meng Fang, and Bolei Zhou.
+\newblock {\em \\Deep Reinforcement Learning Workshop NeurIPS 2022}, 2022.
+
+\bibitem{tan2024natural}
+titleKevin Tan and Ziping Xu.
+\newblock {\em \\Reinforcement Learning Journal}, 1, 2024.
+
+\bibitem{xu2020meteorological}
+titleZiping Xu, Song~Xi Chen, and Xiaoqing Wu.
+\newblock {\em \\Journal of Geophysical Research: Atmospheres},
+  125(16):e2020JD032423, 2020.
+
+\bibitem{xu2023coupling}
+titleZiping Xu, Quanfu Fan, Yilai Li, Emma~Rose Lee, John~Maxwell Cohn, Ambuj
+  Tewari, Seychelle~M Vos, and Michael Cianfrocco.
+\newblock {\em \\NeurIPS 2023 AI for Science Workshop}, 2023.
+
+\bibitem{xu2025aime}
+titleZiping Xu, Hinal Jajal, Sung~Won Choi, Inbal Nahum-Shani, Guy Shani,
+  Alexandra Psihogios, Pei-Yao Hung, and Susan Murphy.
+\newblock {\em \\Submitted to AIME (AI in Medicine) 2025}, 2025.
+
+\bibitem{lu2021bandit}
+titleZiping Xu, Yangyi Lu, and Ambuj Tewari.
+\newblock {\em \\arXiv preprint arXiv:2108.04782}, 2021.
+
+\bibitem{xu2021decision}
+titleZiping Xu, Amirhossein Meisami, and Ambuj Tewari.
+\newblock {\em \\AISTATS}, pages 127--135, 2021.
+
+\bibitem{xu2022adaptive}
+titleZiping Xu, Eunjae Shim, Ambuj Tewari, and Paul Zimmerman.
+\newblock {\em \\NeurIPS}, 2022.
+
+\bibitem{xu2019worst}
+titleZiping Xu and Ambuj Tewari.
+\newblock {\em \\In NeurIPS}, 2019.
+
+\bibitem{xu2020reinforcement}
+titleZiping Xu and Ambuj Tewari.
+\newblock {\em \\In NeurIPS}, 33:18226--18236, 2020.
+
+\bibitem{xu2021representation}
+titleZiping Xu and Ambuj Tewari.
+\newblock {\em \\In NeurIPS}, 34:4792--4804, 2021.
+
+\bibitem{xu2022statistical}
+titleZiping Xu and Ambuj Tewari.
+\newblock {\em \\ICML}, pages 24663--24682, 2022.
+
+\bibitem{ICLR2024-Xu}
+titleZiping Xu, Zifan Xu, Runxuan Jiang, Peter Stone, and Ambuj Tewari.
+\newblock {\em \\Proceedings of the International Conference on Learning
+  Representations (ICLR)}, 2024.
+
+\bibitem{xu2024adaptation}
+titleZiping Xu, Iris Yan, and Susan Murphy.
+\newblock {\em \\RLC 2024 Deployable RL Workshop}, 2024.
+
+\bibitem{xu2024fallacy}
+titleZiping Xu, Kelly Zhang, and Susan Murphy.
+\newblock {\em \\arXiv}, 2024.
+
+\bibitem{zhang2017cautionary}
+titleShuyi Zhang, Bin Guo, Anlan Dong, Jing He, Ziping Xu, and Song~Xi Chen.
+\newblock {\em \\Proceedings of the Royal Society A: Mathematical, Physical and
+  Engineering Sciences}, 473(2205):20170457, 2017.
+
+\end{thebibliography}

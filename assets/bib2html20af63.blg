@@ -1,0 +1,167 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: bib2html20af63.aux
+The style file: mybold.bst.bst
+Database file #1: papers.bib
+ptr=2, stack=
+{\bf CryoRL: Reinforcement Learning Enables Efficient Cryo-{EM} Data Collection}\\
+
+---the literal stack isn't empty for entry Fan_2024_WACV
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf Torsionnet: A Reinforcement Learning Approach to Sequential Conformer Search}\\
+
+---the literal stack isn't empty for entry gogineni2020torsionnet
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf Online Learning in Bandits with Predicted Context}\\
+
+---the literal stack isn't empty for entry guo2023online
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf Optimized Path Planning Surpasses Human Efficiency in cryo-{EM} Imaging}\\
+
+---the literal stack isn't empty for entry Li_2022
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf Health Effects of Air Pollution in {China}}\\
+
+---the literal stack isn't empty for entry liu2018health
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf Big Control Actions Help Multitask Learning of Unstable Linear Systems}\\
+
+---the literal stack isn't empty for entry modi2022big
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf Predicting Reaction Conditions from Limited Data Through Active Transfer Learning}\\
+
+---the literal stack isn't empty for entry shim2022predicting
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf MOPA: a Minimalist Off-Policy Approach to Safe-{RL}}\\
+
+---the literal stack isn't empty for entry sun2022mopa
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf Supervised {Q}-Learning for Continuous Control}\\
+
+---the literal stack isn't empty for entry sun2022supervised
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf A Natural Extension To Online Algorithms For Hybrid {RL} With Limited Coverage}\\
+
+---the literal stack isn't empty for entry tan2024natural
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf Meteorological Change and Impacts on Air Pollution: Results from North {China}}\\
+
+---the literal stack isn't empty for entry xu2020meteorological
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf Coupling Semi-supervised Learning with Reinforcement Learning for Better Decision Making---An application to Cryo-{EM} Data Collection}\\
+
+---the literal stack isn't empty for entry xu2023coupling
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf Reinforcement Learning on {AYA} Dyads to Enhance Medication Adherence}\\
+
+---the literal stack isn't empty for entry xu2025aime
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf Bandit Algorithms for Precision Medicine}\\
+
+---the literal stack isn't empty for entry lu2021bandit
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf Decision Making Problems with Funnel Structure: A Multi-task Learning Approach with Application to Email Marketing Campaigns}\\
+
+---the literal stack isn't empty for entry xu2021decision
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf Adaptive Sampling for Discovery}\\
+
+---the literal stack isn't empty for entry xu2022adaptive
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf Worst-case Regret Bound for Perturbation Based Exploration}\\
+
+---the literal stack isn't empty for entry xu2019worst
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf Reinforcement Learning in Factored {MDPs}: Oracle-efficient Algorithms and Tighter Regret Bounds for the Non-episodic Setting}\\
+
+---the literal stack isn't empty for entry xu2020reinforcement
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf Representation Learning Beyond Linear Prediction Functions}\\
+
+---the literal stack isn't empty for entry xu2021representation
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf On the Statistical Benefits of Curriculum Learning}\\
+
+---the literal stack isn't empty for entry xu2022statistical
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf Sample Efficient Myopic Exploration Through Multitask Reinforcement Learning with Diverse Tasks}\\
+
+---the literal stack isn't empty for entry ICLR2024-Xu
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf An Adaptation of {RLSVI} with Explicit Action Sampling Probabilities}\\
+
+---the literal stack isn't empty for entry xu2024adaptation
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf The Fallacy of Minimizing Local Regret in the Sequential Task Setting}\\
+
+---the literal stack isn't empty for entry xu2024fallacy
+while executing---line 1090 of file mybold.bst.bst
+ptr=2, stack=
+{\bf Cautionary Tales on Air-quality Improvement in {Beijing}}\\
+
+---the literal stack isn't empty for entry zhang2017cautionary
+while executing---line 1090 of file mybold.bst.bst
+You've used 24 entries,
+            2121 wiz_defined-function locations,
+            624 strings with 8834 characters,
+and the built_in function-call counts, 8526 in all, are:
+= -- 767
+> -- 612
+< -- 3
++ -- 243
+- -- 216
+* -- 731
+:= -- 1469
+add.period$ -- 48
+call.type$ -- 24
+change.case$ -- 156
+chr.to.int$ -- 0
+cite$ -- 24
+duplicate$ -- 257
+empty$ -- 497
+format.name$ -- 216
+if$ -- 1671
+int.to.chr$ -- 0
+int.to.str$ -- 24
+missing$ -- 24
+newline$ -- 99
+num.names$ -- 48
+pop$ -- 168
+preamble$ -- 1
+purify$ -- 156
+quote$ -- 0
+skip$ -- 242
+stack$ -- 0
+substring$ -- 382
+swap$ -- 57
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 96
+warning$ -- 0
+while$ -- 63
+width$ -- 26
+write$ -- 203
+(There were 24 error messages)

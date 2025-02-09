@@ -233,7 +233,7 @@ FUNCTION {format.editors}
 FUNCTION {format.title}
 { title empty$
     { "" }
-    { "{\bf " title * "}" * }
+    { "{\bf " title * "}" * "\\" *}
   if$
 }
 
@@ -537,18 +537,21 @@ FUNCTION {format.incoll.inproc.crossref}
 
 FUNCTION {article}
 { output.bibitem
-  format.authors "author" output.check
+  title empty$
+    { "" }
+    { "{\bf " title * "}" * "\\" * write$ newline$ }
+  if$
+  author empty$
+    { "to sort, need author or key in " cite$ * warning$ }
+    { author format.names }
+  if$
+  output
   new.block
-  format.title "title" output.check
+  journal emphasize output
   new.block
-  crossref missing$
-    { journal emphasize "journal" output.check
-      format.vol.num.pages output
-      format.date "year" output.check
-    }
-    { format.article.crossref output.nonnull
-      format.pages output
-    }
+  year empty$
+    { "missing year in " cite$ * warning$ }
+    { year output }
   if$
   new.block
   note output
