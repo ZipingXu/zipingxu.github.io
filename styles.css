@@ -17,6 +17,7 @@ body {
 }
 
 .container {
+    padding-top: 2em;
     max-width: 2000px;
     margin: 0 auto;
     padding: 0 0;
