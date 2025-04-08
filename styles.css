@@ -1,4 +1,11 @@
 /* General Styles */
+:root {
+    --publication-vertical-margin: 0.7rem;
+    --publication-section-margin: 1rem;
+    --section-background: #ffffff;
+    --base-font-size: 1.1rem;  /* Standard font size for main text */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +21,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
     color: black;
     line-height: 1.6;
+    font-size: var(--base-font-size);
+    padding-top: 4rem;
 }
 
 .container {
@@ -48,15 +57,15 @@ header {
 .profile-content {
     display: flex;
     flex-direction: column;
-    height: 100%;
     vertical-align: top;
-    padding-top: 0.5rem;
-    /* background: #88a167; */
-    background: #fafafa;
-    border: 1px solid gray;
-    border-radius: 10px;
-    padding: 1rem;
-    height: 400px;
+    padding: 1.5rem;
+    background: var(--section-background);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    min-height: 400px; /* minimum height instead of fixed height */
+}
+
+.profile-left {
+    flex-shrink: 0; /* Prevent the image from shrinking */
 }
 
 .profile-info {
@@ -72,9 +81,9 @@ header {
 /* Section Styles */
 section {
     margin-bottom: 3rem;
-    border: 1px solid gray;
-    border-radius: 10px;
-    padding: 1rem;
+    padding: 1.5rem;
+    background: var(--section-background);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 h2 {
@@ -92,6 +101,10 @@ h1 {
 }
 
 /* Research Interests */
+#research {
+    font-size: var(--base-font-size);
+}
+
 #research ul {
     list-style-type: none;
     padding-left: 1rem;
@@ -128,24 +141,49 @@ h1 {
 /* News Section */
 .news-item {
     margin-bottom: 1rem;
+    font-size: var(--base-font-size);
 }
 
 .date {
     font-weight: bold;
     color: #666;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: var(--base-font-size);
 }
 
-
-
+.talk-title {
+    font-weight: bold;
+    color: black;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: var(--base-font-size);
+}
 
 /* Publications Section Styling */
 .publications-container {
     margin-top: 1rem;
-    font-size: 1.1rem;
+    font-size: var(--base-font-size);
 }
 
 .publications-container h3 {
     font-size: 1.75rem;
+    margin-top: var(--publication-section-margin);
+}
+
+.publications-container tr[valign="top"] {
+    margin-bottom: var(--publication-vertical-margin);
+    display: block;
+}
+
+.bibtexitem {
+    display: block;
+    padding-bottom: var(--publication-vertical-margin);
+}
+
+/* First h3 in publications shouldn't have top margin */
+.publications-container h3:first-of-type {
+    margin-top: 0;
 }
 
 /* Style BibBase elements */
@@ -167,33 +205,43 @@ h1 {
 
 .nav-menu {
     display: flex;
-    justify-content: flex-end;  /* Add this line to align menu to the right */
-    background-color: rgba(250, 250, 250, 0.8);
-    position: sticky;
-    max-width: 2000px;
-    top: 0rem;
-    /* z-index: 2000; */
-    /* box-shadow: 0 3px 5px rgba(0,0,0,0.1); */
-    border: 1px solid gray;
-    border-radius: 10px;
-    margin-top: 1rem;
+    justify-content: center;  /* Center the menu */
+    background-color: rgba(255, 255, 255, 0.95);  /* Slightly transparent white */
+    position: fixed;  /* Make it fixed position */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;  /* Ensure it stays on top */
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* Subtle shadow */
 }
 
 .nav-links {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;  /* Center the links */
     list-style: none;
-    margin: 0.3rem 0;
-    padding: 0.3rem 0;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;  /* Space between links */
 }
 
 .nav-links li {
-    margin-left: 2rem;
+    margin: 0;  /* Remove default margins */
 }
 
 .nav-links a {
+    color: #333;
     text-decoration: none;
-    color: inherit;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    background-color: #71b466;
+    color: white;
 }
 
 /* Style all hyperlinks */
@@ -207,18 +255,13 @@ a:hover {
     color: #B83A2D;  /* Lighter green on hover */
 }
 
-/* Make sure navigation menu links stay white */
-.nav-menu a {
-    color: #333;
-    text-decoration: none;
-    padding: 0.5rem 0.5rem;
-    display: block;
-    transition: all 0.3s;
-    font-weight: 500;
-    font-size: 1.2rem;
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
 }
 
-.nav-menu a:hover {
+/* Active link state */
+.nav-links a.active {
     background-color: #71b466;
     color: white;
 }
@@ -268,5 +311,45 @@ a:hover {
     body {
         padding: 0 1rem;
     }
+}
+
+/* Style review items */
+.review-item {
+    margin: 0.5rem 0;
+    line-height: 1.8;
+    padding-left: 1rem;
+}
+
+/* Teaching grid layout */
+.teaching-grid {
+    display: grid;
+    grid-template-columns: minmax(120px, auto) minmax(150px, auto) auto;
+    gap: 0.3rem;
+    margin: 0.5rem 0;
+}
+
+.teaching-grid > div {
+    padding: 0.1rem 0;
+}
+
+/* Mentoring items */
+.mentoring-item {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+}
+
+.mentoring-item .name {
+    font-weight: 500;
+}
+
+.mentoring-item .topic {
+    color: #666;
+    margin-top: 0.2rem;
+}
+
+.mentoring-item .next-step {
+    font-style: italic;
+    color: #666;
+    margin-top: 0.2rem;
 }
 

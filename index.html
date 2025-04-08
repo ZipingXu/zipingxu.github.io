@@ -9,19 +9,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <!-- Add Navigation Menu
+    <!-- Navigation Menu -->
     <nav class="nav-menu">
         <div class="container">
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#research">Research</a></li>
                 <li><a href="#publications">Publications</a></li>
-                <li><a href="#news">Invited Talks</a></li>
-                <li><a href="">  </a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#news">Talks</a></li>
+                <li><a href="#reviewing">Service</a></li>
+                <li><a href="#teaching">Teaching</a></li>
             </ul>
         </div>
     </nav>
-    <br> -->
     <br>
     <br>
 
@@ -53,14 +54,16 @@
                     <div class="about-me">
                         <br>
                         <p>I am a Postdoctoral Fellow in Statistics at Harvard University with Professor <a href="http://people.seas.harvard.edu/~samurphy/">Susan Murphy</a>.</p>
+
+                        <p>I am an incoming Assistant Professor at UNC Chapel Hill, <a href="https://datascience.unc.edu/">School of Data Science and Socity</a>, starting July, 2025 .</p>
                         
                         <p>I obtained my PhD degree in Statistics from University of Michigan advised by Professor <a href="https://www.ambujtewari.com">Ambuj Tewari</a>. Before joining University of Michigan, I obtained my B.S. degree in Data Science from Peking University in 2018, where I was advised by Professor <a href="https://www.songxichen.com">Song Xi Chen</a>.</p>
                     </div>
-                    <div class="market-info" style="margin-bottom: auto;">
+                    <!-- <div class="market-info" style="margin-bottom: auto;">
                         <strong>I am on the 2024-2025 academic job market and would be happy to discuss any opportunities!
                         <br>
                         Find my lastest CV <a href="assets/CV_v4.pdf">here</a>.</strong>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -69,20 +72,19 @@
         <!-- Research Interests -->
         <section id="research">
             <h2>Research Interests</h2>
-            <p> My primary research interests lie in <strong>machine learning theory and applications</strong>, with a focus on <strong>sequential decision-making approaches for digital interventions</strong> in domains such as <strong>mobile health</strong>. My theoretical works tackle the critical challenges in applying sequential decision-making approaches, for example, Reinforcement Learning (RL), in mobile health. Below I summarize three key challenges and my works on them:
-                <!-- My works include designing sample-efficient online learning methods, statistical inference methods for adaptively collected data, and transfer/multitask learning approaches to address the continual nature of health applications. -->
+            <p> My research interests focus on exploring new frontiers of <strong>data-driven decision-making approaches (e.g., Reinforcement Learning)</strong> with applications in the <strong>digital intervention domain</strong> e.g., mobile health. A few highlights of my works are:
             </p>
                 <br>
             <ul>
-                <li><strong>Sample-Efficient Online Algorithm Design:</strong> In mobile health, the availability of data is often limited, making sample efficiency crucial. I develop algorithms that leverage structural information about the domain to learn effective policies with small sample size [<a href="https://arxiv.org/pdf/2205.14829">13</a>,<a href="http://proceedings.mlr.press/v130/xu21a/xu21a.pdf">16</a>,<a href="https://proceedings.neurips.cc/paper/2020/file/d3b1fb02964aa64e257f9f26a31f72cf-Paper.pdf">20</a>].
+                <li><strong>Sample-Efficient Online Algorithm Design:</strong> Sample efficiency is crucial in data scarce domains like mobile health. I develop algorithms that leverage structural information to improve sample efficiency [<a href="https://arxiv.org/pdf/2205.14829">I</a>,<a href="http://proceedings.mlr.press/v130/xu21a/xu21a.pdf">II</a>,<a href="https://proceedings.neurips.cc/paper/2020/file/d3b1fb02964aa64e257f9f26a31f72cf-Paper.pdf">III</a>].
                 </li>
                 <br>
-                <li><strong>Statistical Inference for Adaptively Collected Data:</strong> Adaptive experimental designs, commonly used in mobile health, introduce dependencies across time and users, violating the assumptions of most existing statistical inference methods. I develop statistical inference approaches that remain valid in these challenging settings [<a href="https://proceedings.mlr.press/v238/guo24b/guo24b.pdf">2</a>,<a href="https://openreview.net/pdf?id=nn8u4ef0LH">8</a>].</li>
+                <li><strong>Statistical Inference for Adaptively Collected Data:</strong> Adaptive experimental designs, commonly used in mobile health, introduce dependencies across time and users, introducing challenges to existing statistical inference methods. I develop new approaches that remain valid in these challenging settings [<a href="https://proceedings.mlr.press/v238/guo24b/guo24b.pdf">I</a>,<a href="https://openreview.net/pdf?id=nn8u4ef0LH">II</a>].</li>
                 <br>
-                <li><strong>Transfer Learning/Multitask Learning:</strong> Due to limited sample sizes in mobile health, transferring knowledge from existing datasets is often necessary. However, significant domain shifts, driven by differences in participant demographics, intervention designs, or societal changes, complicate this process. I design transfer learning approaches that account for such shifts, enabling more robust and effective learning [<a href="https://arxiv.org/pdf/2403.01636">5</a>,<a href="https://arxiv.org/pdf/2403.10946">6</a>,<a href="https://rlj.cs.umass.edu/2024/papers/Paper152.html">7</a>,<a href="https://proceedings.mlr.press/v162/xu22i/xu22i.pdf">12</a>,<a href="https://proceedings.neurips.cc/paper_files/paper/2021/file/258be18e31c8188555c2ff05b4d542c3-Paper.pdf">18</a>].</li>
+                <li><strong>Transfer Learning/Multitask Learning:</strong> Due to limited sample sizes in mobile health, transferring knowledge from existing datasets is often necessary. However, significant domain shifts, driven by differences in participant demographics, intervention designs, or societal changes, complicate this process. I design transfer learning approaches that account for such shifts, enabling more robust and effective learning [<a href="https://arxiv.org/pdf/2403.01636">I</a>,<a href="https://arxiv.org/pdf/2403.10946">II</a>,<a href="https://rlj.cs.umass.edu/2024/papers/Paper152.html">III</a>,<a href="https://proceedings.mlr.press/v162/xu22i/xu22i.pdf">IV</a>,<a href="https://proceedings.neurips.cc/paper_files/paper/2021/file/258be18e31c8188555c2ff05b4d542c3-Paper.pdf">V</a>].</li>
             </ul>
             <br>
-            <strong>Mobile health clinical trial design:</strong> I am actively involved in designing mobile health clinical trials with domain scientists. One such trial is <strong>ADAPTS-HCT</strong>, which targets <strong>medication adherence</strong> among adolescents and young adults (AYA) undergone bone marrow transplantation. I lead the RL algorithm design for adaptive delivery of digital interventions as part of the intervention package. See my <a href="assets/Informs_talk.pdf">talk</a> at INFORMS 2024 for more details.
+            <strong>Mobile health clinical trial design:</strong> I am actively involved in designing Reinforcement Learning (RL) powered digital interventions solutions for real mobile health clinical trials. One such trial is <strong>ADAPTS-HCT</strong> that targets <strong>medication adherence</strong> among adolescents and young adults (AYA) undergone bone marrow transplantation. I lead the RL algorithm design for adaptive delivery of digital interventions as part of the intervention package. See my <a href="assets/Informs_talk.pdf">talk</a> at INFORMS 2024 for more details.
         </section>
 
         <!-- Publications -->
@@ -93,27 +95,38 @@
             </div>
         </section>
 
+        <!-- Fellowships and Awards Section -->
+        <section id="awards">
+            <h2>Fellowships and Awards</h2>
+            <div id="awards-content">
+                <!-- The awards content will be loaded here -->
+            </div>
+        </section>
+
         <!-- News Section -->
         <section id="news">
             <h2>Recent Invited Talks</h2>
-            <div class="news-item">
-                <span class="date">Reinforcement Learning for Mobile Health: Addressing Measurement Error and Non-stationarity</span>
-                <ul>
-                    <li>AI and Healthcare Seminar Series at MILA, November 2024</li>
-                    <li>STATS 300 Seminar at Department of Statistics, Harvard University, Boston, MA, November 2024</li>
-                </ul>
-                <br>
-                <span class="date">Designing a Multi-agent RL Algorithm for Improving Post-HCT Medication Adherence via a Digital Intervention</span>
-                <ul>
-                    <li>2024 INFORMS Annual Meeting, Seattle, WA, October 2024</li>
-                </ul>
-                <br>
-                <span class="date">The Fallacy of Minimizing Cumulative Regret in the Sequential Task Setting</span>
-                <ul>
-                    <li>2024 Joint Statistical Meetings, Portland, OR, August 2024</li>
-                </ul>
+            <div id="talks-content">
+                <!-- The talks will be loaded here -->
             </div>
         </section>
+
+        <!-- Reviewing Section -->
+        <section id="reviewing">
+            <h2>Professional Service</h2>
+            <div id="reviewing-content">
+                <!-- The reviewing content will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Teaching and Mentoring Section -->
+        <section id="teaching">
+            <h2>Teaching and Mentoring</h2>
+            <div id="teaching-content">
+                <!-- The teaching content will be loaded here -->
+            </div>
+        </section>
+
     </div>
 
     <!-- Add this script before the closing body tag -->
@@ -131,8 +144,64 @@
             }
         }
 
-        // Load publications when the page loads
+        // Function to load the talks
+        async function loadTalks() {
+            try {
+                const response = await fetch('assets/invited_talks.html');
+                const content = await response.text();
+                document.getElementById('talks-content').innerHTML = content;
+            } catch (error) {
+                console.error('Error loading talks:', error);
+                document.getElementById('talks-content').innerHTML = 
+                    '<p>Error loading talks. Please try again later.</p>';
+            }
+        }
+
+        // Function to load the reviewing work
+        async function loadReviewing() {
+            try {
+                const response = await fetch('assets/reviewing.html');
+                const content = await response.text();
+                document.getElementById('reviewing-content').innerHTML = content;
+            } catch (error) {
+                console.error('Error loading reviewing work:', error);
+                document.getElementById('reviewing-content').innerHTML = 
+                    '<p>Error loading reviewing work. Please try again later.</p>';
+            }
+        }
+
+        // Function to load the teaching and mentoring content
+        async function loadTeaching() {
+            try {
+                const response = await fetch('assets/teaching.html');
+                const content = await response.text();
+                document.getElementById('teaching-content').innerHTML = content;
+            } catch (error) {
+                console.error('Error loading teaching content:', error);
+                document.getElementById('teaching-content').innerHTML = 
+                    '<p>Error loading teaching content. Please try again later.</p>';
+            }
+        }
+
+        // Function to load the awards content
+        async function loadAwards() {
+            try {
+                const response = await fetch('assets/awards.html');
+                const content = await response.text();
+                document.getElementById('awards-content').innerHTML = content;
+            } catch (error) {
+                console.error('Error loading awards content:', error);
+                document.getElementById('awards-content').innerHTML = 
+                    '<p>Error loading awards content. Please try again later.</p>';
+            }
+        }
+
+        // Load all sections when the page loads
         loadPublications();
+        loadTalks();
+        loadReviewing();
+        loadTeaching();
+        loadAwards();
     </script>
 </body>
 </html> 
