@@ -55,7 +55,7 @@
                         <br>
                         <p>I am a Postdoctoral Fellow in Statistics at Harvard University with Professor <a href="http://people.seas.harvard.edu/~samurphy/">Susan Murphy</a>.</p>
 
-                        <p>I am an incoming Assistant Professor at UNC Chapel Hill, <a href="https://datascience.unc.edu/">School of Data Science and Socity</a>, starting July, 2025 .</p>
+                        <p>I am an incoming Assistant Professor at UNC Chapel Hill, <a href="https://datascience.unc.edu/">School of Data Science and Society</a>, starting July, 2025 .</p>
                         
                         <p>I obtained my PhD degree in Statistics from University of Michigan advised by Professor <a href="https://www.ambujtewari.com">Ambuj Tewari</a>. Before joining University of Michigan, I obtained my B.S. degree in Data Science from Peking University in 2018, where I was advised by Professor <a href="https://www.songxichen.com">Song Xi Chen</a>.</p>
                     </div>
@@ -85,6 +85,14 @@
             </ul>
             <br>
             <strong>Mobile health clinical trial design:</strong> I am actively involved in designing Reinforcement Learning (RL) powered digital interventions solutions for real mobile health clinical trials. One such trial is <strong>ADAPTS-HCT</strong> that targets <strong>medication adherence</strong> among adolescents and young adults (AYA) undergone bone marrow transplantation. I lead the RL algorithm design for adaptive delivery of digital interventions as part of the intervention package. See my <a href="assets/Informs_talk.pdf">talk</a> at INFORMS 2024 for more details.
+        </section>
+
+        <!-- News Section -->
+        <section id="news">
+            <h2>News</h2>
+            <div id="news-content">
+                <!-- The news content will be loaded here -->
+            </div>
         </section>
 
         <!-- Publications -->
@@ -183,6 +191,19 @@
             }
         }
 
+        // Function to load the news content
+        async function loadNews() {
+            try {
+                const response = await fetch('assets/news.html');
+                const content = await response.text();
+                document.getElementById('news-content').innerHTML = content;
+            } catch (error) {
+                console.error('Error loading news content:', error);
+                document.getElementById('news-content').innerHTML = 
+                    '<p>Error loading news content. Please try again later.</p>';
+            }
+        }
+
         // Function to load the awards content
         async function loadAwards() {
             try {
@@ -202,6 +223,7 @@
         loadReviewing();
         loadTeaching();
         loadAwards();
+        loadNews();
     </script>
 </body>
 </html> 
