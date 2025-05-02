@@ -240,8 +240,8 @@ h1 {
         width: 100%;
     }
     
-    /* Hide navigation menu on mobile */
-    .nav-menu {
+    /* Hide navigation menu and news section on mobile */
+    .nav-menu, #news {
         display: none;
     }
 
