@@ -96,6 +96,11 @@
 
     <!-- Add this script before the closing body tag -->
     <script>
+        // Function to check if device is mobile
+        function isMobileDevice() {
+            return window.innerWidth <= 768;
+        }
+
         // Function to load the publications
         async function loadPublications() {
             try {
@@ -176,6 +181,11 @@
 
         // Function to handle section switching
         function switchSection(sectionId) {
+            // On mobile, only allow research and publications sections
+            if (isMobileDevice() && sectionId !== 'research' && sectionId !== 'publications') {
+                return;
+            }
+
             const dynamicContent = document.getElementById('dynamic-content');
             const sections = {
                 'research': `
@@ -283,6 +293,17 @@
 
         // Load initial content
         loadNews();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (isMobileDevice()) {
+                // On mobile, ensure we're showing either research or publications
+                const currentSection = document.getElementById('dynamic-content').querySelector('section');
+                if (currentSection && currentSection.id !== 'research' && currentSection.id !== 'publications') {
+                    switchSection('research');
+                }
+            }
+        });
     </script>
 </body>
 </html> 
