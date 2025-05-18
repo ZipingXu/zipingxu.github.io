@@ -174,16 +174,32 @@ h1 {
 /* News Section */
 .news-item {
     margin-bottom: 0rem;
+    max-height: 160px;
     font-size: var(--base-font-size);
     overflow-x: auto;  /* Enable horizontal scrolling */
+    overflow-y: auto;  /* Enable horizontal scrolling */
     -webkit-overflow-scrolling: touch;  /* Smooth scrolling on touch devices */
-    scrollbar-width: none;  /* Hide scrollbar for Firefox */
-    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+/* Custom scrollbar styling */
 .news-item::-webkit-scrollbar {
-    display: none;
+    height: 12px;  /* Height of horizontal scrollbar */
+    width: 12px;
+}
+
+.news-item::-webkit-scrollbar-track {
+    background: white;
+    border: 1px solid white;
+}
+
+.news-item::-webkit-scrollbar-thumb {
+    background: #eee;
+    border: 1px solid white;
+    border-radius: 4px;
+}
+
+.news-item::-webkit-scrollbar-thumb:hover {
+    background: #666;
 }
 
 /* Specific style for news section h2 */
