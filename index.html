@@ -64,6 +64,7 @@
             <ul class="nav-links">
                 <li><a href="#research" class="nav-link active" data-section="research">Research</a></li>
                 <li><a href="#publications" class="nav-link" data-section="publications">Publications</a></li>
+                <li><a href="#talks" class="nav-link" data-section="talks">Talks</a></li>
                 <li><a href="#awards" class="nav-link" data-section="awards">Awards</a></li>
                 <li><a href="#reviewing" class="nav-link" data-section="reviewing">Service</a></li>
                 <li><a href="#teaching" class="nav-link" data-section="teaching">Teaching</a></li>
@@ -194,6 +195,14 @@
                         </div>
                     </section>
                 `,
+                'talks': `
+                    <section id="talks" class="section-transition">
+                        <h2>Talks</h2>
+                        <div id="talks-content">
+                            <!-- The talks content will be loaded here -->
+                        </div>
+                    </section>
+                `,
                 'awards': `
                     <section id="awards" class="section-transition">
                         <h2>Awards</h2>
@@ -242,6 +251,9 @@
                     switch(sectionId) {
                         case 'publications':
                             loadPublications();
+                            break;
+                        case 'talks':
+                            loadTalks();
                             break;
                         case 'awards':
                             loadAwards();

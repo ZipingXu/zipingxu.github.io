@@ -334,18 +334,28 @@ def build_teaching(items):
 
 
 def build_talks(items):
+    """Grouped by CV subsection; titled talks shown as "title", venue."""
+    groups = {}
+    order = []
+    for s, sub, d, c in items:
+        if s and s.startswith('Invited Talks') and d:
+            key = sub or 'Talks'
+            if key not in groups:
+                groups[key] = []
+                order.append(key)
+            raw = c.strip()
+            m = re.match(r"\s*``(.*)''\s*,\s*(.*)$", raw, re.S)
+            if m:
+                content = f'“{latex_to_html(m.group(1))},” {latex_to_html(m.group(2))}'
+            else:
+                content = latex_to_html(raw)
+            groups[key].append((latex_to_html(d), content))
     parts = ['<div class="news-item">']
-    talks = [(latex_to_html(d), c) for s, _, d, c in items if s == 'Invited Talks' and d]
-    for ti, (date, raw) in enumerate(talks):
-        m = re.match(r"\s*``(.*)''\s*,\s*(.*)$", raw, re.S)
-        title, venue = (m.group(1), m.group(2)) if m else (raw, '')
-        if ti:
-            parts.append('    <br>')
-        parts.append(f'    <span class="talk-title">{latex_to_html(title)}</span>')
-        parts.append(f'    <span class="date">{date}</span>')
-        parts.append('    <div class="review-item">')
-        parts.append(f'        {latex_to_html(venue)}')
-        parts.append('    </div>')
+    for gi, sub in enumerate(order):
+        if gi:
+            parts.append('\n    <br>')
+        parts.append(f'    <h3>{sub}</h3>')
+        parts.append('    ' + rows_html(groups[sub]))
     parts.append('</div>')
     return '\n'.join(parts) + '\n'
 
