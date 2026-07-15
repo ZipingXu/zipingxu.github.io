@@ -344,11 +344,9 @@ def build_talks(items):
                 groups[key] = []
                 order.append(key)
             raw = c.strip()
+            # Homepage shows venue only (titles are kept in the CV, dropped here for consistency)
             m = re.match(r"\s*``(.*)''\s*,\s*(.*)$", raw, re.S)
-            if m:
-                content = f'“{latex_to_html(m.group(1))},” {latex_to_html(m.group(2))}'
-            else:
-                content = latex_to_html(raw)
+            content = latex_to_html(m.group(2)) if m else latex_to_html(raw)
             groups[key].append((latex_to_html(d), content))
     parts = ['<div class="news-item">']
     for gi, sub in enumerate(order):
