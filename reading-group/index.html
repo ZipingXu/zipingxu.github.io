@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<!--
+  AI/ML Reading Group — standalone page, served at /reading-group/.
+  SOURCE OF TRUTH: ~/my_folder/ai_ml_reading_group/site/index.html
+  Do not edit this copy. Edit the source, then re-copy:
+      cp ~/my_folder/ai_ml_reading_group/site/index.html reading-group/index.html
+  Design tokens are duplicated from styles.css so the page stands alone.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI/ML Reading Group — Ziping Xu, UNC Chapel Hill</title>
+    <meta name="description" content="Fall 2026 AI/ML reading group at UNC: uncertainty quantification for generative AI, inference from synthetic and model-generated data, game theory &amp; human-AI interaction, and interpretable machine learning for LLMs.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%231F1F1E'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23FBFBFA' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* ---- Design tokens copied verbatim from zipingxu.github.io/styles.css ---- */
+        :root {
+            --bg: #FBFBFA;
+            --surface: #FFFFFF;
+            --border: #EAEAEA;
+            --text: #1F1F1E;
+            --text-secondary: #787774;
+            --text-faint: #A8A49C;
+            --link: #35634A;
+            --link-hover: #234634;
+            --underline: #C9C5BD;
+            --accent-bg: #EDF3EC;
+            --accent-ink: #346538;
+            --callout-bg: #FBF3DB;
+            --callout-ink: #7A5300;
+            --serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
+            --sans: 'Geist', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+            --mono: 'Geist Mono', 'SF Mono', 'Menlo', monospace;
+            --content-width: 62rem;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--sans);
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            font-size: 1rem;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(120, 110, 90, 0.05), transparent);
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 3.5rem 2rem 2rem;
+            z-index: 1;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: underline;
+            text-decoration-color: var(--underline);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.2em;
+            transition: color 200ms ease, text-decoration-color 200ms ease;
+        }
+        a:hover { color: var(--link-hover); text-decoration-color: currentColor; }
+        a:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; border-radius: 2px; }
+
+        h1 {
+            font-family: var(--serif);
+            font-size: 3rem;
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            color: var(--text);
+        }
+
+        h2 {
+            font-family: var(--serif);
+            font-size: 1.7rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: var(--text);
+            margin-bottom: 0.9rem;
+        }
+
+        /* ---- Page-specific (prefix rg- so it namespaces cleanly on merge) -------- */
+
+        .rg-header { padding-bottom: 1.75rem; border-bottom: 1px solid var(--border); }
+
+        .rg-kicker {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 0.9rem;
+        }
+
+        .rg-lede {
+            margin-top: 1.15rem;
+            max-width: 68ch;
+            font-size: 1.02rem;
+            color: var(--text);
+            text-wrap: pretty;
+        }
+
+        .rg-meta {
+            margin-top: 1.1rem;
+            font-family: var(--mono);
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.01em;
+        }
+        .rg-meta span + span::before { content: '·'; margin: 0 0.55rem; color: var(--text-faint); }
+
+        .rg-topic { padding: 2.5rem 0 1.25rem; border-bottom: 1px solid var(--border); }
+        .rg-topic:last-of-type { border-bottom: none; }
+
+        .rg-topic-num {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent-ink);
+            margin-bottom: 0.35rem;
+        }
+
+        .rg-intro {
+            max-width: 68ch;
+            font-size: 0.975rem;
+            color: var(--text);
+            text-wrap: pretty;
+            margin-bottom: 1.6rem;
+        }
+        .rg-intro p + p { margin-top: 0.85em; }
+
+        /* Table — booktabs-ish hairlines, mono meta columns, matching the site's
+           publications rhythm. Horizontally scrollable on small screens. */
+        .rg-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+        table.rg-schedule {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.925rem;
+            min-width: 720px;
+        }
+
+        table.rg-schedule thead th {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            text-align: left;
+            padding: 0 0.9rem 0.6rem 0;
+            border-bottom: 1.5px solid var(--text);
+            white-space: nowrap;
+        }
+
+        table.rg-schedule tbody td {
+            padding: 0.85rem 0.9rem 0.85rem 0;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            text-wrap: pretty;
+        }
+
+        table.rg-schedule tbody tr:hover td { background: rgba(120, 110, 90, 0.03); }
+
+        /* Date / Time / Location: mono meta, like the site's date columns */
+        .rg-col-date, .rg-col-time, .rg-col-loc {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            letter-spacing: 0.01em;
+            color: var(--text-secondary);
+            white-space: nowrap;
+        }
+        .rg-col-date { color: var(--text); }
+
+        .rg-col-paper { min-width: 20rem; }
+        .rg-col-paper a { font-size: 0.95em; }
+        .rg-paper-placeholder { color: var(--text-faint); font-style: italic; }
+
+        /* Keyword pills — reuse the accent tint from the homepage */
+        .rg-kw {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.01em;
+            color: var(--accent-ink);
+            background: var(--accent-bg);
+            border-radius: 6px;
+            padding: 0.12rem 0.5rem;
+            margin: 0 0.3rem 0.3rem 0;
+            white-space: nowrap;
+        }
+
+        .rg-tbd { color: var(--text-faint); }
+
+        /* ---- In-schedule additional reading listed under each core paper ------- */
+        .rg-paper-title { display: inline; }
+        .rg-col-paper a.rg-paper-title + a.rg-paper-title { display: block; margin-top: 0.4rem; }
+        .rg-addl-cell {
+            margin-top: 0.45rem;
+            font-size: 0.8rem;
+            line-height: 1.55;
+            color: var(--text-faint);
+            text-wrap: pretty;
+        }
+        .rg-addl-tag {
+            font-family: var(--mono);
+            font-size: 0.62rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-faint);
+            margin-right: 0.4rem;
+        }
+        .rg-addl-cell a { color: var(--text-secondary); }
+
+        footer {
+            border-top: 1px solid var(--border);
+            margin-top: 2.5rem;
+            padding: 1.5rem 0 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            color: var(--text-faint);
+        }
+        footer a { color: var(--text-secondary); }
+
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+        @media (max-width: 768px) {
+            .container { padding: 2rem 1.25rem 1.5rem; }
+            h1 { font-size: 2.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="rg-header">
+            <div class="rg-kicker">Reading Group</div>
+            <h1>Frontier of AI &amp; ML</h1>
+            <p class="rg-lede">
+                This reading group focuses on the principles and methods behind modern AI systems. This semester has four themes: uncertainty quantification for generative models, inference from synthetic and model-generated data, game theory and human-AI interaction, and interpretable machine learning.
+            </p>
+            <div class="rg-meta">
+                <span>UNC Chapel Hill</span>
+                <span>School of Data and Information Sciences</span>
+                <span>Fall 2026</span>
+                <span>Organized by <a href="../index.html">Ziping Xu; Hang Zhou; Chudi Zhong</a></span>
+            </div>
+            <div class="rg-meta">
+                <span>Weekly, Aug 24 – Dec 2</span>
+                <span>No meeting the week of Nov 23 (Thanksgiving)</span>
+                <span>Meeting day, time &amp; room TBD</span>
+            </div>
+        </header>
+
+        <main>
+            <!-- ================= TOPIC 1 ================= -->
+            <section class="rg-topic" id="topic-uq">
+                <div class="rg-topic-num">Topic 1</div>
+                <h2>Uncertainty Quantification for Generative AI</h2>
+                <div class="rg-intro">
+                    <p>
+                        Generative models are fluent whether or not they are correct, so the question is not only what
+                        they output but how much to believe it. We read the methods that turn a model's own signals into
+                        uncertainty quantification with mathematical guarantees: calibration, semantic entropy, conformal
+                        coverage, abstention.
+                    </p>
+                    <p>
+                        The model here is the <em>object</em> of study. Topic 2 turns it around and asks what happens
+                        when the model becomes the measuring instrument.
+                    </p>
+                </div>
+                <div class="rg-table-wrap">
+                    <table class="rg-schedule">
+                        <thead>
+                            <tr>
+                                <th class="rg-col-date">Date</th>
+                                <th class="rg-col-time">Time</th>
+                                <th class="rg-col-loc">Location</th>
+                                <th class="rg-col-paper">Paper(s)</th>
+                                <th>Keyword</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Each row = one session: core paper + additional reading beneath -->
+                            <tr>
+                                <td class="rg-col-date">Week of 08/24</td>
+                                <td class="rg-col-time">TBD</td>
+                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-paper">
+                                    <a href="https://arxiv.org/abs/2402.10978" class="rg-paper-title">Mohri &amp; Hashimoto 2024 — “Language Models with Conformal Factuality Guarantees”</a>
+                                    <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://arxiv.org/abs/2107.07511">Angelopoulos &amp; Bates 2021 · Gentle Intro to Conformal</a> · <a href="https://arxiv.org/abs/2406.09714">Cherian 2024 · LLM Validity via Enhanced CP</a></div>
+                                </td>
+                                <td><span class="rg-kw">conformal prediction</span></td>
+                            </tr>
+                            <tr>
+                                <td class="rg-col-date">Week of 08/31</td>
+                                <td class="rg-col-time">TBD</td>
+                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-paper">
+                                    <a href="https://arxiv.org/abs/2510.10193" class="rg-paper-title">Wang et al. 2025 — “SAFER: Risk-Constrained Sample-then-Filter in LLMs” (ICLR 2026)</a>
+                                    <a href="https://openreview.net/forum?id=vGg1Nvd4xo" class="rg-paper-title">Noorani et al. 2025 — “Conformal Prediction Beyond the Seen: A Missing Mass Perspective for UQ in Generative Models”</a>
+                                </td>
+                                <td><span class="rg-kw">conformal risk control</span></td>
+                            </tr>
+                            <tr>
+                                <td class="rg-col-date">Week of 09/07</td>
+                                <td class="rg-col-time">TBD</td>
+                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-paper">
+                                    <a href="https://doi.org/10.1038/s41586-024-07421-0" class="rg-paper-title">Farquhar et al. 2024 — “Detecting hallucinations in LLMs using semantic entropy” · Nature</a>
+                                    <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://arxiv.org/abs/2302.09664">Kuhn 2023 · Semantic Uncertainty</a> · <a href="https://arxiv.org/abs/2406.15927">Kossen 2024 · Semantic Entropy Probes</a></div>
+                                </td>
+                                <td><span class="rg-kw">semantic entropy</span></td>
+                            </tr>
+                            <tr>
+                                <td class="rg-col-date">Week of 09/14</td>
+                                <td class="rg-col-time">TBD</td>
+                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-paper">
+                                    <a href="https://arxiv.org/abs/2502.04964" class="rg-paper-title">Vashurin et al. 2025 — “UQ for LLMs through Minimum Bayes Risk”</a>
+                                    <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://arxiv.org/abs/2305.19187">Lin 2024 · Generating with Confidence</a> · <a href="https://arxiv.org/abs/2303.08896">Manakul 2023 · SelfCheckGPT</a></div>
+                                </td>
+                                <td><span class="rg-kw">consistency · MBR</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ================= TOPIC 2 ================= -->
+            <section class="rg-topic" id="topic-synthetic">
+                <div class="rg-topic-num">Topic 2</div>
+                <h2>Inference from Synthetic &amp; Model-Generated Data</h2>
+                <div class="rg-intro">
+                    <p>
+                        The same models are increasingly the measuring instrument. When an LLM judge or a synthetic
+                        annotation supplies the labels, the evaluator's error contaminates every number computed from
+                        it — and the contamination does not average away.
+                    </p>
+                    <p>
+                        We ask what valid inference looks like when the data is itself model output: prediction-powered
+                        inference and its efficiency theory, then distribution-free wrappers that borrow strength from
+                        synthetic data while keeping finite-sample coverage, risk, and FDR guarantees intact.
+                    </p>
+                </div>
+                <div class="rg-table-wrap">
+                    <table class="rg-schedule">
+                        <thead>
+                            <tr>
+                                <th class="rg-col-date">Date</th>
+                                <th class="rg-col-time">Time</th>
+                                <th class="rg-col-loc">Location</th>
+                                <th class="rg-col-paper">Paper(s)</th>
+                                <th>Keyword</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="rg-col-date">Week of 09/21</td>
+                                <td class="rg-col-time">TBD</td>
+                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-paper">
+                                    <a href="https://arxiv.org/abs/2403.07008" class="rg-paper-title">Boyeau et al. 2024 — “AutoEval Done Right: Using Synthetic Data for Model Evaluation”</a>
+                                    <a href="https://arxiv.org/abs/2601.05420" class="rg-paper-title">Chen et al. 2026 — “Efficient Inference for Noisy LLM-as-a-Judge Evaluation”</a>
+                                    <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://arxiv.org/abs/2301.09633">Angelopoulos 2023 · Prediction-Powered Inference</a> · <a href="https://arxiv.org/abs/2311.01453">Angelopoulos 2023 · PPI++</a></div>
+                                </td>
+                                <td><span class="rg-kw">autoevaluation · PPI</span></td>
+                            </tr>
+                            <tr>
+                                <td class="rg-col-date">Week of 09/28</td>
+                                <td class="rg-col-time">TBD</td>
+                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-paper">
+                                    <a href="https://arxiv.org/abs/2509.20345" class="rg-paper-title">Bashari et al. 2025 — “General Synthetic-Powered Inference” (GESPI)</a>
+                                    <a href="https://arxiv.org/abs/2602.16690" class="rg-paper-title">Lee et al. 2026 — “Synthetic-Powered Multiple Testing with FDR Control” (SynthBH)</a>
+                                </td>
+                                <td><span class="rg-kw">synthetic-powered inference</span></td>
+                            </tr>
+                            <tr>
+                                <td class="rg-col-date">Week of 10/05</td>
+                                <td class="rg-col-time">TBD</td>
+                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-paper">
+                                    <a href="https://arxiv.org/abs/2602.16061" class="rg-paper-title">Chen, Simchi-Levi &amp; Xiong 2026 — “Partial Identification under Missing Data Using Weak Shadow Variables from Pretrained Models”</a>
+                                    <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://academic.oup.com/biomet/article-abstract/103/2/475/1744427">Miao &amp; Tchetgen Tchetgen 2016 · Doubly Robust Estimators under MNAR with a Shadow Variable</a></div>
+                                </td>
+                                <td><span class="rg-kw">partial identification</span> <span class="rg-kw">MNAR</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ================= TOPIC 3 ================= -->
+            <section class="rg-topic" id="topic-game">
+                <div class="rg-topic-num">Topic 3</div>
+                <h2>Game Theory &amp; Human-AI Interaction</h2>
+                <div class="rg-intro">
+                    <p>
+                        <em>The usual assumption:</em> sequential decision making writes the person down as the
+                        environment — a fixed, if noisy, map from action to response. It breaks where it matters most,
+                        because people learn, they satisfice, and they respond to the <em>pattern</em> of what an
+                        algorithm does rather than to its latest message.
+                    </p>
+                    <p>
+                        <em>The reframe:</em> a game between two learners, each partially observing the other, where
+                        what we want is a good equilibrium rather than an optimal policy. Shared interests are not
+                        enough — identical payoffs still settle badly when neither side sees the other's history.
+                    </p>
+                </div>
+                <div class="rg-table-wrap">
+                    <table class="rg-schedule">
+                        <thead>
+                            <tr>
+                                <th class="rg-col-date">Date</th>
+                                <th class="rg-col-time">Time</th>
+                                <th class="rg-col-loc">Location</th>
+                                <th class="rg-col-paper">Paper(s)</th>
+                                <th>Keyword</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Each row = one session: core paper + additional reading beneath -->
+                            <tr>
+                                <td class="rg-col-date">Week of 10/12</td>
+                                <td class="rg-col-time">TBD</td>
+                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-paper">
+                                    <a href="https://arxiv.org/abs/2312.00886" class="rg-paper-title">Munos et al. 2024 — “Nash Learning from Human Feedback” (ICML 2024)</a>
+                                    <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://arxiv.org/abs/2401.04056">Swamy 2024 · Minimaximalist RLHF (SPO)</a> · <a href="https://arxiv.org/abs/2404.03715">Rosset 2024 · Direct Nash Optimization</a> · <a href="https://arxiv.org/abs/2503.10990">Liu 2025 · Condorcet Paradox to Nash Equilibrium</a></div>
+                                </td>
+                                <td><span class="rg-kw">Nash learning</span></td>
+                            </tr>
+                            <tr>
+                                <td class="rg-col-date">Week of 10/19</td>
+                                <td class="rg-col-time">TBD</td>
+                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-paper">
+                                    <a href="https://arxiv.org/abs/2202.10678" class="rg-paper-title">Wu et al. 2022 — “Sequential Information Design: Markov Persuasion Process” (EC 2022)</a>
+                                    <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://arxiv.org/abs/2102.10156">Zu 2021 · Persuade on the Fly</a> · <a href="https://arxiv.org/abs/2402.03077">Bacchiocchi 2024 · MPP from Scratch</a></div>
+                                </td>
+                                <td><span class="rg-kw">Bayesian persuasion</span></td>
+                            </tr>
+                            <tr>
+                                <td class="rg-col-date">Week of 10/26</td>
+                                <td class="rg-col-time">TBD</td>
+                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-paper">
+                                    <a href="https://arxiv.org/abs/2402.09721" class="rg-paper-title">Lin &amp; Chen 2025 — “Generalized Principal-Agent Problem with a Learning Agent” (ICLR 2025 spotlight)</a>
+                                    <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://arxiv.org/abs/2408.07923">Wojtowicz 2024 · When and Why is Persuasion Hard?</a> · <a href="https://arxiv.org/abs/2402.04971">Hossain 2024 · Multi-Sender Persuasion</a> · <a href="https://arxiv.org/abs/2407.14452">Wojtowicz &amp; DeDeo 2025 · Undermining Mental Proof</a></div>
+                                </td>
+                                <td><span class="rg-kw">principal-agent</span> <span class="rg-kw">learning agents</span></td>
+                            </tr>
+                            <tr>
+                                <td class="rg-col-date">Week of 11/02</td>
+                                <td class="rg-col-time">TBD</td>
+                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-paper">
+                                    <a href="https://arxiv.org/abs/2112.13521" class="rg-paper-title">Zhong, Yang, Wang &amp; Jordan 2021 — “Stackelberg-Nash Equilibria in Markov Games with Myopic Followers” (JMLR)</a>
+                                    <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://arxiv.org/abs/2102.11494">Bai 2021 · Stackelberg Equilibria in General-Sum Games</a></div>
+                                </td>
+                                <td><span class="rg-kw">Stackelberg</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ================= TOPIC 4 ================= -->
+            <section class="rg-topic" id="topic-interp">
+                <div class="rg-topic-num">Topic 4</div>
+                <h2>Interpretable Machine Learning for LLMs</h2>
+                <div class="rg-intro">
+                    <p>
+                        If we are going to rely on these systems, we should be able to say what they are doing and why.
+                        I am interested in the <em>science behind interpretability claims</em>: mechanistic circuits and
+                        the causal interventions that test them, sparse dictionary learning together with the critiques
+                        that ask whether its features are real, concept-based steering, and the faithfulness of
+                        chain-of-thought as an account of a model's actual computation.
+                    </p>
+                    <p>
+                        The methodological spine is evaluation — probing, sanity checks, and control experiments that
+                        distinguish an explanation that is genuine from one that is merely plausible. We close the
+                        semester here because it asks what all the earlier signals and behaviors were really evidence of.
+                    </p>
+                </div>
+                <div class="rg-table-wrap">
+                    <table class="rg-schedule">
+                        <thead>
+                            <tr>
+                                <th class="rg-col-date">Date</th>
+                                <th class="rg-col-time">Time</th>
+                                <th class="rg-col-loc">Location</th>
+                                <th class="rg-col-paper">Paper(s)</th>
+                                <th>Keyword</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="rg-col-date">Week of 11/09</td>
+                                <td class="rg-col-time">TBD</td>
+                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-paper"><span class="rg-paper-placeholder">Paper to be assigned</span></td>
+                                <td><span class="rg-kw">circuits</span></td>
+                            </tr>
+                            <tr>
+                                <td class="rg-col-date">Week of 11/16</td>
+                                <td class="rg-col-time">TBD</td>
+                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-paper"><span class="rg-paper-placeholder">Paper to be assigned</span></td>
+                                <td><span class="rg-kw">sparse autoencoders</span></td>
+                            </tr>
+                            <tr>
+                                <td class="rg-col-date">Week of 11/30</td>
+                                <td class="rg-col-time">TBD</td>
+                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-paper"><span class="rg-paper-placeholder">Paper to be assigned</span></td>
+                                <td><span class="rg-kw">CoT faithfulness</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <span>© 2026 Ziping Xu</span>
+            <span><a href="../index.html">Homepage</a> · <a href="https://scholar.google.com/citations?user=V-VcaYIAAAAJ&hl=en&oi=ao">Google Scholar</a></span>
+        </footer>
+    </div>
+</body>
+</html>

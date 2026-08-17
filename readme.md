@@ -35,6 +35,13 @@ Hand-maintained files:
   not on the CV, keyed by BibTeX key. Links also come automatically from a
   bib entry's `pdf`/`url`/`doi` field; this file overrides those.
 - `index.html`, `styles.css` — page structure and design.
+- `reading-group/index.html` — Fall 2026 AI/ML reading group page, served at
+  `/reading-group/`. **Copied, not authored here** — the source of truth is
+  `~/my_folder/ai_ml_reading_group/site/index.html`. To update:
+
+  ```bash
+  cp ~/my_folder/ai_ml_reading_group/site/index.html reading-group/index.html
+  ```
 
 The old `bibtex2html` flow (`papers.bib` + `add_year_sections.py`) is
 superseded by `build_from_cv.py`.
