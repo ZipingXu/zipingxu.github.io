@@ -5,6 +5,7 @@
   Do not edit this copy. Edit the source, then re-copy:
       cp ~/my_folder/ai_ml_reading_group/site/index.html reading-group/index.html
   Design tokens are duplicated from styles.css so the page stands alone.
+  Meeting slot fixed 2026-08-28: Fridays 11:30 AM, ITS Manning 4008.
 -->
 <html lang="en">
 <head>
@@ -213,6 +214,14 @@
 
         .rg-tbd { color: var(--text-faint); }
 
+        /* Weeks with no meeting (breaks, holidays) */
+        tr.rg-break td {
+            color: var(--text-faint);
+            font-style: italic;
+        }
+        tr.rg-break .rg-col-date { color: var(--text-faint); font-style: normal; }
+        tr.rg-break:hover td { background: none; }
+
         /* ---- In-schedule additional reading listed under each core paper ------- */
         .rg-paper-title { display: inline; }
         .rg-col-paper a.rg-paper-title + a.rg-paper-title { display: block; margin-top: 0.4rem; }
@@ -270,9 +279,10 @@
                 <span>Organized by <a href="../index.html">Ziping Xu; Hang Zhou; Chudi Zhong</a></span>
             </div>
             <div class="rg-meta">
-                <span>Weekly, Aug 24 – Dec 2</span>
-                <span>No meeting the week of Nov 23 (Thanksgiving)</span>
-                <span>Meeting day, time &amp; room TBD</span>
+                <span>Fridays, 11:30&nbsp;AM</span>
+                <span>ITS Manning 4008</span>
+                <span>Aug 28 – Nov 20, 2026</span>
+                <span>No meeting Oct 16 (Fall Break) or Nov 27 (Thanksgiving)</span>
             </div>
         </header>
 
@@ -307,29 +317,30 @@
                         <tbody>
                             <!-- Each row = one session: core paper + additional reading beneath -->
                             <tr>
-                                <td class="rg-col-date">Week of 08/24</td>
-                                <td class="rg-col-time">TBD</td>
-                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-date">Fri 08/28</td>
+                                <td class="rg-col-time">11:30 AM</td>
+                                <td class="rg-col-loc">ITS Manning 4008</td>
+                                <td class="rg-col-paper">
+                                    <span class="rg-paper-title">Kickoff — framing, the four topics, and sign-ups</span>
+                                    <div class="rg-addl-cell">No reading — we set the semester’s framing and take presenter sign-ups. Led by Ziping Xu.</div>
+                                </td>
+                                <td><span class="rg-kw">organizational</span></td>
+                            </tr>
+                            <tr>
+                                <td class="rg-col-date">Fri 09/04</td>
+                                <td class="rg-col-time">11:30 AM</td>
+                                <td class="rg-col-loc">ITS Manning 4008</td>
                                 <td class="rg-col-paper">
                                     <a href="https://arxiv.org/abs/2402.10978" class="rg-paper-title">Mohri &amp; Hashimoto 2024 — “Language Models with Conformal Factuality Guarantees”</a>
+                                    <a href="https://openreview.net/forum?id=vGg1Nvd4xo" class="rg-paper-title">Noorani et al. 2025 — “Conformal Prediction Beyond the Seen: A Missing Mass Perspective for UQ in Generative Models”</a>
                                     <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://arxiv.org/abs/2107.07511">Angelopoulos &amp; Bates 2021 · Gentle Intro to Conformal</a> · <a href="https://arxiv.org/abs/2406.09714">Cherian 2024 · LLM Validity via Enhanced CP</a></div>
                                 </td>
-                                <td><span class="rg-kw">conformal prediction</span></td>
+                                <td><span class="rg-kw">conformal prediction</span> <span class="rg-kw">missing mass</span></td>
                             </tr>
                             <tr>
-                                <td class="rg-col-date">Week of 08/31</td>
-                                <td class="rg-col-time">TBD</td>
-                                <td class="rg-col-loc">TBD</td>
-                                <td class="rg-col-paper">
-                                    <a href="https://arxiv.org/abs/2510.10193" class="rg-paper-title">Wang et al. 2025 — “SAFER: Risk-Constrained Sample-then-Filter in LLMs” (ICLR 2026)</a>
-                                    <a href="https://openreview.net/forum?id=vGg1Nvd4xo" class="rg-paper-title">Noorani et al. 2025 — “Conformal Prediction Beyond the Seen: A Missing Mass Perspective for UQ in Generative Models”</a>
-                                </td>
-                                <td><span class="rg-kw">conformal risk control</span></td>
-                            </tr>
-                            <tr>
-                                <td class="rg-col-date">Week of 09/07</td>
-                                <td class="rg-col-time">TBD</td>
-                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-date">Fri 09/11</td>
+                                <td class="rg-col-time">11:30 AM</td>
+                                <td class="rg-col-loc">ITS Manning 4008</td>
                                 <td class="rg-col-paper">
                                     <a href="https://doi.org/10.1038/s41586-024-07421-0" class="rg-paper-title">Farquhar et al. 2024 — “Detecting hallucinations in LLMs using semantic entropy” · Nature</a>
                                     <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://arxiv.org/abs/2302.09664">Kuhn 2023 · Semantic Uncertainty</a> · <a href="https://arxiv.org/abs/2406.15927">Kossen 2024 · Semantic Entropy Probes</a></div>
@@ -337,9 +348,9 @@
                                 <td><span class="rg-kw">semantic entropy</span></td>
                             </tr>
                             <tr>
-                                <td class="rg-col-date">Week of 09/14</td>
-                                <td class="rg-col-time">TBD</td>
-                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-date">Fri 09/18</td>
+                                <td class="rg-col-time">11:30 AM</td>
+                                <td class="rg-col-loc">ITS Manning 4008</td>
                                 <td class="rg-col-paper">
                                     <a href="https://arxiv.org/abs/2502.04964" class="rg-paper-title">Vashurin et al. 2025 — “UQ for LLMs through Minimum Bayes Risk”</a>
                                     <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://arxiv.org/abs/2305.19187">Lin 2024 · Generating with Confidence</a> · <a href="https://arxiv.org/abs/2303.08896">Manakul 2023 · SelfCheckGPT</a></div>
@@ -380,9 +391,9 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="rg-col-date">Week of 09/21</td>
-                                <td class="rg-col-time">TBD</td>
-                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-date">Fri 09/25</td>
+                                <td class="rg-col-time">11:30 AM</td>
+                                <td class="rg-col-loc">ITS Manning 4008</td>
                                 <td class="rg-col-paper">
                                     <a href="https://arxiv.org/abs/2403.07008" class="rg-paper-title">Boyeau et al. 2024 — “AutoEval Done Right: Using Synthetic Data for Model Evaluation”</a>
                                     <a href="https://arxiv.org/abs/2601.05420" class="rg-paper-title">Chen et al. 2026 — “Efficient Inference for Noisy LLM-as-a-Judge Evaluation”</a>
@@ -391,24 +402,14 @@
                                 <td><span class="rg-kw">autoevaluation · PPI</span></td>
                             </tr>
                             <tr>
-                                <td class="rg-col-date">Week of 09/28</td>
-                                <td class="rg-col-time">TBD</td>
-                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-date">Fri 10/02</td>
+                                <td class="rg-col-time">11:30 AM</td>
+                                <td class="rg-col-loc">ITS Manning 4008</td>
                                 <td class="rg-col-paper">
                                     <a href="https://arxiv.org/abs/2509.20345" class="rg-paper-title">Bashari et al. 2025 — “General Synthetic-Powered Inference” (GESPI)</a>
                                     <a href="https://arxiv.org/abs/2602.16690" class="rg-paper-title">Lee et al. 2026 — “Synthetic-Powered Multiple Testing with FDR Control” (SynthBH)</a>
                                 </td>
                                 <td><span class="rg-kw">synthetic-powered inference</span></td>
-                            </tr>
-                            <tr>
-                                <td class="rg-col-date">Week of 10/05</td>
-                                <td class="rg-col-time">TBD</td>
-                                <td class="rg-col-loc">TBD</td>
-                                <td class="rg-col-paper">
-                                    <a href="https://arxiv.org/abs/2602.16061" class="rg-paper-title">Chen, Simchi-Levi &amp; Xiong 2026 — “Partial Identification under Missing Data Using Weak Shadow Variables from Pretrained Models”</a>
-                                    <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://academic.oup.com/biomet/article-abstract/103/2/475/1744427">Miao &amp; Tchetgen Tchetgen 2016 · Doubly Robust Estimators under MNAR with a Shadow Variable</a></div>
-                                </td>
-                                <td><span class="rg-kw">partial identification</span> <span class="rg-kw">MNAR</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -446,29 +447,26 @@
                         <tbody>
                             <!-- Each row = one session: core paper + additional reading beneath -->
                             <tr>
-                                <td class="rg-col-date">Week of 10/12</td>
-                                <td class="rg-col-time">TBD</td>
-                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-date">Fri 10/09</td>
+                                <td class="rg-col-time">11:30 AM</td>
+                                <td class="rg-col-loc">ITS Manning 4008</td>
                                 <td class="rg-col-paper">
                                     <a href="https://arxiv.org/abs/2312.00886" class="rg-paper-title">Munos et al. 2024 — “Nash Learning from Human Feedback” (ICML 2024)</a>
                                     <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://arxiv.org/abs/2401.04056">Swamy 2024 · Minimaximalist RLHF (SPO)</a> · <a href="https://arxiv.org/abs/2404.03715">Rosset 2024 · Direct Nash Optimization</a> · <a href="https://arxiv.org/abs/2503.10990">Liu 2025 · Condorcet Paradox to Nash Equilibrium</a></div>
                                 </td>
                                 <td><span class="rg-kw">Nash learning</span></td>
                             </tr>
-                            <tr>
-                                <td class="rg-col-date">Week of 10/19</td>
-                                <td class="rg-col-time">TBD</td>
-                                <td class="rg-col-loc">TBD</td>
-                                <td class="rg-col-paper">
-                                    <a href="https://arxiv.org/abs/2202.10678" class="rg-paper-title">Wu et al. 2022 — “Sequential Information Design: Markov Persuasion Process” (EC 2022)</a>
-                                    <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://arxiv.org/abs/2102.10156">Zu 2021 · Persuade on the Fly</a> · <a href="https://arxiv.org/abs/2402.03077">Bacchiocchi 2024 · MPP from Scratch</a></div>
-                                </td>
-                                <td><span class="rg-kw">Bayesian persuasion</span></td>
+                            <tr class="rg-break">
+                                <td class="rg-col-date">Fri 10/16</td>
+                                <td class="rg-col-time">—</td>
+                                <td class="rg-col-loc">—</td>
+                                <td class="rg-col-paper">No meeting — Fall Break (10/15–16)</td>
+                                <td>—</td>
                             </tr>
                             <tr>
-                                <td class="rg-col-date">Week of 10/26</td>
-                                <td class="rg-col-time">TBD</td>
-                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-date">Fri 10/23</td>
+                                <td class="rg-col-time">11:30 AM</td>
+                                <td class="rg-col-loc">ITS Manning 4008</td>
                                 <td class="rg-col-paper">
                                     <a href="https://arxiv.org/abs/2402.09721" class="rg-paper-title">Lin &amp; Chen 2025 — “Generalized Principal-Agent Problem with a Learning Agent” (ICLR 2025 spotlight)</a>
                                     <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://arxiv.org/abs/2408.07923">Wojtowicz 2024 · When and Why is Persuasion Hard?</a> · <a href="https://arxiv.org/abs/2402.04971">Hossain 2024 · Multi-Sender Persuasion</a> · <a href="https://arxiv.org/abs/2407.14452">Wojtowicz &amp; DeDeo 2025 · Undermining Mental Proof</a></div>
@@ -476,9 +474,9 @@
                                 <td><span class="rg-kw">principal-agent</span> <span class="rg-kw">learning agents</span></td>
                             </tr>
                             <tr>
-                                <td class="rg-col-date">Week of 11/02</td>
-                                <td class="rg-col-time">TBD</td>
-                                <td class="rg-col-loc">TBD</td>
+                                <td class="rg-col-date">Fri 10/30</td>
+                                <td class="rg-col-time">11:30 AM</td>
+                                <td class="rg-col-loc">ITS Manning 4008</td>
                                 <td class="rg-col-paper">
                                     <a href="https://arxiv.org/abs/2112.13521" class="rg-paper-title">Zhong, Yang, Wang &amp; Jordan 2021 — “Stackelberg-Nash Equilibria in Markov Games with Myopic Followers” (JMLR)</a>
                                     <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://arxiv.org/abs/2102.11494">Bai 2021 · Stackelberg Equilibria in General-Sum Games</a></div>
@@ -521,25 +519,41 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="rg-col-date">Week of 11/09</td>
-                                <td class="rg-col-time">TBD</td>
-                                <td class="rg-col-loc">TBD</td>
-                                <td class="rg-col-paper"><span class="rg-paper-placeholder">Paper to be assigned</span></td>
+                                <td class="rg-col-date">Fri 11/06</td>
+                                <td class="rg-col-time">11:30 AM</td>
+                                <td class="rg-col-loc">ITS Manning 4008</td>
+                                <td class="rg-col-paper">
+                                    <a href="https://arxiv.org/abs/2211.00593" class="rg-paper-title">Wang et al. 2023 — &ldquo;Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 Small&rdquo; (ICLR 2023)</a>
+                                    <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://arxiv.org/abs/2301.04709">Geiger 2023 · Causal Abstraction</a> · <a href="https://transformer-circuits.pub/2025/attribution-graphs/methods.html">Ameisen 2025 · Circuit Tracing</a> · <a href="https://arxiv.org/abs/2501.16496">Sharkey 2025 · Open Problems in Mech Interp</a></div>
+                                </td>
                                 <td><span class="rg-kw">circuits</span></td>
                             </tr>
                             <tr>
-                                <td class="rg-col-date">Week of 11/16</td>
-                                <td class="rg-col-time">TBD</td>
-                                <td class="rg-col-loc">TBD</td>
-                                <td class="rg-col-paper"><span class="rg-paper-placeholder">Paper to be assigned</span></td>
+                                <td class="rg-col-date">Fri 11/13</td>
+                                <td class="rg-col-time">11:30 AM</td>
+                                <td class="rg-col-loc">ITS Manning 4008</td>
+                                <td class="rg-col-paper">
+                                    <a href="https://arxiv.org/abs/2309.08600" class="rg-paper-title">Cunningham et al. 2023 — &ldquo;Sparse Autoencoders Find Highly Interpretable Features in Language Models&rdquo; (ICLR 2024)</a>
+                                    <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://arxiv.org/abs/2406.04093">Gao 2024 · Scaling and Evaluating SAEs</a> · <a href="https://arxiv.org/abs/2502.16681">Kantamneni 2025 · Are SAEs Useful?</a> · <a href="https://arxiv.org/abs/2501.17727">Heap 2025 · SAEs on Randomly Initialized Transformers</a></div>
+                                </td>
                                 <td><span class="rg-kw">sparse autoencoders</span></td>
                             </tr>
                             <tr>
-                                <td class="rg-col-date">Week of 11/30</td>
-                                <td class="rg-col-time">TBD</td>
-                                <td class="rg-col-loc">TBD</td>
-                                <td class="rg-col-paper"><span class="rg-paper-placeholder">Paper to be assigned</span></td>
+                                <td class="rg-col-date">Fri 11/20</td>
+                                <td class="rg-col-time">11:30 AM</td>
+                                <td class="rg-col-loc">ITS Manning 4008</td>
+                                <td class="rg-col-paper">
+                                    <a href="https://arxiv.org/abs/2305.04388" class="rg-paper-title">Turpin et al. 2023 — &ldquo;Language Models Don&rsquo;t Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting&rdquo; (NeurIPS 2023)</a>
+                                    <div class="rg-addl-cell"><span class="rg-addl-tag">+ also</span><a href="https://arxiv.org/abs/2307.13702">Lanham 2023 · Measuring Faithfulness in CoT Reasoning</a> · <a href="https://arxiv.org/abs/2505.05410">Chen 2025 · Reasoning Models Don’t Always Say What They Think</a> · <a href="https://arxiv.org/abs/2503.08679">Arcuschin 2025 · CoT In The Wild Is Not Always Faithful</a></div>
+                                </td>
                                 <td><span class="rg-kw">CoT faithfulness</span></td>
+                            </tr>
+                            <tr class="rg-break">
+                                <td class="rg-col-date">Fri 11/27</td>
+                                <td class="rg-col-time">—</td>
+                                <td class="rg-col-loc">—</td>
+                                <td class="rg-col-paper">No meeting — Thanksgiving recess (11/25–27)</td>
+                                <td>—</td>
                             </tr>
                         </tbody>
                     </table>
