@@ -30,7 +30,7 @@ import sys
 from pathlib import Path
 
 SITE = Path(__file__).resolve().parent
-CV_REPO = Path.home() / 'my_folder/knowledge/cv/Overleaf'
+CV_REPO = SITE.parent / 'knowledge/cv/Overleaf'
 BIB = CV_REPO / 'conference.bib'
 MAINTEX = CV_REPO / 'main.tex'
 LINKS_FILE = SITE / 'data/paper_links.json'
