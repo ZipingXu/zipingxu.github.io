@@ -206,6 +206,9 @@ def build_publications():
             venue_line = f'<em><br>{venue}</em>'
             if extras:
                 venue_line += f', {extras}'
+            note = strip_braces(e.get('note', '').replace('\n', ' ')).strip()
+            if note:
+                authors += f' ({note[0].lower() + note[1:]})'
             links = entry_links(e, overrides)
             link_html = ''
             if links:
