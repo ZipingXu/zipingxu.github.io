@@ -195,7 +195,7 @@ def build_publications():
     out = ['<bold>You can view my full list of publications at '
            '<a href="https://scholar.google.com/citations?user=V-VcaYIAAAAJ&hl=en&oi=ao">'
            'Google Scholar</a></bold>',
-           '<br>', '(* denotes equal contribution)', '<table>', '']
+           '<br>', '(* denotes equal contribution or alphabetical order)', '<table>', '']
     for year in sorted(by_year, reverse=True):
         out.append(f'<tr><td><h3>{year}</h3></td></tr>\n')
         for e in by_year[year]:
@@ -206,9 +206,6 @@ def build_publications():
             venue_line = f'<em><br>{venue}</em>'
             if extras:
                 venue_line += f', {extras}'
-            note = strip_braces(e.get('note', '').replace('\n', ' ')).strip()
-            if note:
-                authors += f' ({note[0].lower() + note[1:]})'
             links = entry_links(e, overrides)
             link_html = ''
             if links:
