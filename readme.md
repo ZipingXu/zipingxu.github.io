@@ -31,6 +31,14 @@ Generated files — **never edit these by hand**, they are overwritten:
 Hand-maintained files:
 
 - `assets/news.html` — website-only news feed (short items, newest first).
+  Hand-edited, **except** that every `build_from_cv.py` run inserts an item for
+  each paper new to `conference.bib` where Ziping is first author or every author
+  is starred (alphabetical order / equal contribution): "New preprint … on arXiv"
+  for preprints (dated by the arXiv id), "Our paper … was accepted at …" for
+  venue papers, including when an announced preprint later gets a venue.
+  Announced keys live in `data/news_papers.json`; add a key to its `skip` list to
+  suppress an item, or delete it from `announced` to re-announce. Generated items
+  can be reworded by hand afterwards — they are never regenerated.
 - `data/paper_links.json` — paper links (arXiv/pdf/DOI) shown on the site but
   not on the CV, keyed by BibTeX key. Links also come automatically from a
   bib entry's `pdf`/`url`/`doi` field; this file overrides those.

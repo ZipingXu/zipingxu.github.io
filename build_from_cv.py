@@ -12,8 +12,15 @@ Generated files (do NOT edit these by hand — edit the CV instead):
   assets/invited_talks.html       <- main.tex  "Invited Talks"
   assets/CV.pdf                   <- Overleaf main.pdf
 
+Partly generated:
+  assets/news.html                website-only news feed, hand-maintained, EXCEPT that each
+                                  build inserts an item for every paper new to the CV where
+                                  Ziping is first author or all authors are starred
+                                  (alphabetical order); see build_paper_news(). Announced
+                                  keys are tracked in data/news_papers.json — delete a key
+                                  there to re-announce it, or add it to "skip" to suppress it.
+
 Hand-maintained (never touched by this script):
-  assets/news.html                website-only news feed
   data/paper_links.json           paper links shown on the site (the CV has none);
                                   keyed by BibTeX key: {"key": [{"label": "...", "url": "..."}]}
 
@@ -27,6 +34,7 @@ import re
 import shutil
 import subprocess
 import sys
+from datetime import date
 from pathlib import Path
 
 SITE = Path(__file__).resolve().parent
@@ -34,6 +42,8 @@ CV_REPO = SITE.parent / 'knowledge/cv/Overleaf'
 BIB = CV_REPO / 'conference.bib'
 MAINTEX = CV_REPO / 'main.tex'
 LINKS_FILE = SITE / 'data/paper_links.json'
+NEWS_FILE = SITE / 'assets/news.html'
+NEWS_STATE = SITE / 'data/news_papers.json'
 
 
 # --------------------------------------------------------------------------
@@ -219,6 +229,113 @@ def build_publications():
 
 
 # --------------------------------------------------------------------------
+# News items for new papers
+# --------------------------------------------------------------------------
+
+MONTHS = ['Jan', 'Feb', 'March', 'April', 'May', 'June',
+          'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+NEWS_ROW = ('    <div class="teaching-grid" style="grid-template-columns: 130px auto;">\n'
+            '        <div style="padding-right: 1rem;">{date}</div>\n'
+            '        <div>{text}</div>\n'
+            '    </div>\n')
+
+
+def is_preprint(e):
+    venue = (e.get('journal') or e.get('booktitle') or '').lower()
+    return not venue or 'arxiv' in venue or 'preprint' in venue
+
+
+def qualifies_for_news(e):
+    """Ziping is first author, or every author is starred (alphabetical / equal contribution)."""
+    toks = [t for t in re.split(r'\s+and\s+', e.get('author', '').replace('\n', ' ')) if t.strip()]
+    if not toks:
+        return False
+    if 'Ziping Xu' in toks[0] or 'Xu, Ziping' in toks[0]:
+        return True
+    return any('Ziping' in t for t in toks) and all('$^*$' in t for t in toks)
+
+
+def news_date(e, link):
+    """(year, month) from the arXiv id (YYMM.nnnnn) if there is one, else today."""
+    m = re.search(r'(\d{2})(\d{2})\.\d{4,5}', link or e.get('journal', ''))
+    if m and 1 <= int(m.group(2)) <= 12:
+        return 2000 + int(m.group(1)), int(m.group(2))
+    t = date.today()
+    return t.year, t.month
+
+
+def parse_news_date(s):
+    m = re.match(r'\s*(\d{4})\s+(\w+)', s)
+    if not m:
+        return None
+    mon = m.group(2).lower()
+    for i, name in enumerate(MONTHS):
+        if mon.startswith(name.lower()[:3]):
+            return int(m.group(1)), i + 1
+    return int(m.group(1)), 0
+
+
+def paper_news_text(e, link):
+    title = re.sub(r'\s+', ' ', strip_braces(e.get('title', '').replace('\n', ' '))).strip()
+    titled = f'<a href="{link}">{title}</a>' if link else title
+    names = [format_author(t)[0] for t in re.split(r'\s+and\s+', e['author'].replace('\n', ' ')) if t.strip()]
+    co = [re.sub(r'</?strong>|\*', '', n) for n in names if '<strong>' not in n and n != 'et al.']
+    if not co:
+        with_ = ''
+    elif len(co) <= 3:
+        with_ = ' with ' + (co[0] if len(co) == 1 else ', '.join(co[:-1]) + (',' if len(co) > 2 else '') + f' and {co[-1]}')
+    else:
+        with_ = f' with {co[0]}, {co[1]}, and coauthors'
+    if is_preprint(e):
+        return f'New preprint{with_} on arXiv: {titled}.'
+    venue, _ = format_venue_extras(e)
+    short = re.search(r'\(([^()]+)\)\s*$', venue)
+    venue = short.group(1) if short else venue
+    return f'Our paper {titled}{with_} was accepted at {venue}.'
+
+
+def build_paper_news(entries, overrides):
+    """Insert news.html items for qualifying papers not yet announced; return count added.
+
+    State (data/news_papers.json): {"announced": {key: "preprint"|"published"}, "skip": [keys]}.
+    A key announced as a preprint is announced again once its venue becomes a real one.
+    """
+    if not NEWS_STATE.exists():  # first run: record the back catalogue without announcing it
+        seed = {e['key']: 'preprint' if is_preprint(e) else 'published' for e in entries}
+        NEWS_STATE.write_text(json.dumps({'announced': seed, 'skip': []}, indent=2) + '\n')
+        print(f'  news: seeded {NEWS_STATE.name} with {len(seed)} existing papers (none announced)')
+        return 0
+    state = json.loads(NEWS_STATE.read_text())
+    announced, skip = state.setdefault('announced', {}), set(state.setdefault('skip', []))
+    html = NEWS_FILE.read_text()
+    added = 0
+    for e in entries:
+        key, kind = e['key'], 'preprint' if is_preprint(e) else 'published'
+        if key in skip or announced.get(key) in (kind, 'published') or not qualifies_for_news(e):
+            continue
+        links = entry_links(e, overrides)
+        link = links[0]['url'] if links else ''
+        y, mo = news_date(e, link) if kind == 'preprint' else (date.today().year, date.today().month)
+        row = NEWS_ROW.format(date=f'{y} {MONTHS[mo - 1]}', text=paper_news_text(e, link))
+        # insert before the first existing item that is strictly older
+        pos = None
+        for m in re.finditer(r'    <div class="teaching-grid"[^>]*>\s*<div[^>]*>([^<]*)</div>', html):
+            d = parse_news_date(m.group(1))
+            if d and d < (y, mo):
+                pos = m.start()
+                break
+        if pos is None:
+            pos = html.rindex('</div>')
+        html = html[:pos] + row + html[pos:]
+        announced[key] = kind
+        added += 1
+        print(f'  news: added {key} ({kind})')
+    if added:
+        NEWS_FILE.write_text(html)
+    NEWS_STATE.write_text(json.dumps(state, indent=2) + '\n')
+    return added
+
+# --------------------------------------------------------------------------
 # main.tex sections
 # --------------------------------------------------------------------------
 
@@ -384,6 +501,10 @@ def main():
         status = 'unchanged' if content == old else 'updated  '
         print(f'  {status} {rel}')
 
+    overrides = json.loads(LINKS_FILE.read_text()) if LINKS_FILE.exists() else {}
+    if not build_paper_news(parse_bib(BIB), overrides):
+        print('  unchanged assets/news.html (no new first-author/alphabetical papers)')
+
     cv_pdf = CV_REPO / 'main.pdf'
     if cv_pdf.exists():
         dest = SITE / 'assets/CV.pdf'
@@ -392,7 +513,7 @@ def main():
             shutil.copyfile(cv_pdf, dest)
         print(f'  {"updated  " if changed else "unchanged"} assets/CV.pdf (from Overleaf main.pdf)')
 
-    print('done. news.html is hand-maintained; paper links live in data/paper_links.json.')
+    print('done. news.html is hand-maintained apart from new-paper items; paper links live in data/paper_links.json.')
 
 
 if __name__ == '__main__':
