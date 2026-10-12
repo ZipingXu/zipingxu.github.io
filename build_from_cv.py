@@ -78,7 +78,7 @@ def latex_to_html(s):
     s = re.sub(r'\\textit\{(.*?)\}', r'\1', s)
     s = s.replace('\\&', '&amp;').replace('\\$', '$').replace('\\%', '%')
     s = s.replace('``', '"').replace("''", '"')
-    s = s.replace('~', ' ')
+    s = s.replace('~', ' ').replace('{,}', ',')
     s = s.replace('---', '&mdash;').replace('--', '&ndash;')
     s = re.sub(r'\\hspace\{[^}]*\}|\\vspace\{[^}]*\}|\\small|\\large', '', s)
     s = re.sub(r'\s+', ' ', s).strip()
